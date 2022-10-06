@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
 $colores: (
   "primary": #e51873,
   "secondary": #fde8f1,
@@ -21,15 +23,25 @@ $borderRadius: (
 );
 
 $sizes: (
-"primary": 400px
-//TODO: rellenar el resto de sizes de divs y botones
+  "primary": 400px //TODO: rellenar el resto de sizes de divs y botones,
 );
+
+// Reset styles
 
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-h1 {
-  color: map-get($colores, "primary");
+// Navbar Styles
+
+.navbar {
+  background-color: map-get($colores, "primary");
+  padding: 5px;
+
+  h1 {
+    color: white;
+    font-weight: 100;
+  }
 }
