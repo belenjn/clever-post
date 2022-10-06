@@ -1,17 +1,92 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+html,
 * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
 
-.navbar {
-  background-color: #e51873;
-  padding: 5px;
+body {
+  min-width: 320px;
 }
 
-.navbar h1 {
+.navbar {
+  background-color: #e51873;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 150px;
+}
+
+.navbar .navbar__icon--container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding: 10px;
+  width: 80%;
+}
+
+.navbar .navbar__icon--container h1 {
   color: white;
   font-weight: 100;
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.navbar .navbar__icon--container .navbar__image {
+  background-image: url("../assets/chat.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-left: 40px;
+  width: 80px;
+  height: 70px;
+}
+
+.navbar .navbar__hamburger {
+  background-image: url("../assets/hamburguesa.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 40px;
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .navbar .navbar__icon--container h1 {
+    font-size: 60px;
+    margin-left: 20px;
+  }
+  .navbar .navbar__icon--container .navbar__image {
+    width: 90px;
+    height: 90px;
+  }
+  .navbar .navbar__hamburger {
+    width: 30px;
+    height: 30px;
+  }
 }
 /*# sourceMappingURL=App.css.map */

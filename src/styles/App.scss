@@ -23,25 +23,89 @@ $borderRadius: (
 );
 
 $sizes: (
-  "primary": 400px //TODO: rellenar el resto de sizes de divs y botones,
+  "primary": 400px,
+  "marginNavbar": 50px,
 );
 
 // Reset styles
 
+html,
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
 
-// Navbar Styles
+body {
+  min-width: 320px;
+}
+
+// Navbar Styles in mobile view
 
 .navbar {
   background-color: map-get($colores, "primary");
-  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 150px;
 
-  h1 {
-    color: white;
-    font-weight: 100;
+  .navbar__icon--container {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    padding: 10px;
+    width: 80%;
+
+    h1 {
+      color: white;
+      font-weight: 100;
+      font-size: 30px;
+      margin-left: 20px;
+    }
+
+    .navbar__image {
+      background-image: url("../assets/chat.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-left: 40px;
+      width: 80px;
+      height: 70px;
+    }
+  }
+
+  .navbar__hamburger {
+    background-image: url("../assets/hamburguesa.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+    margin-right: 40px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  // Navbar Styles in desktop view
+  .navbar {
+    .navbar__icon--container {
+      h1 {
+        font-size: 60px;
+        margin-left: 20px;
+      }
+
+      .navbar__image {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    .navbar__hamburger {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
