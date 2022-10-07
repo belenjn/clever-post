@@ -45,88 +45,87 @@ body {
 
 // Login Styles in mobile view
 
-// TODO: arreglar login en la vista mobile
 
 .login {
-    align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: map-get($colors, "secondary");
+
+  .login__title {
+    color: map-get($colors, "primary");
+    text-align: center;
+    font-size: 70px;
+    margin-top: 100px;
+  }
+
+  .login__secondTitle {
+    text-align: center;
+    font-weight: 100;
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .login__data--container {
+    background-color: map-get($colors, "white");
+    border-radius: map-get($borderRadius, "primary");
     display: flex;
+    margin-top: map-get($sizes, "marginTop");
+    margin-bottom: 80px;
     flex-direction: column;
-    background-color: map-get($colors, "secondary");
-  
-    .login__title {
-      color: map-get($colors, "primary");
-      text-align: center;
-      font-size: 70px;
-      margin-top: 60px;
-    }
-  
-    .login__secondTitle {
-      font-weight: 100;
-      font-size: 30px;
-      margin-top: 20px;
-    }
-  
-    .login__data--container {
-      background-color: map-get($colors, "white");
-      border-radius: map-get($borderRadius, "primary");
-      display: flex;
+    width: 90%;
+    height: 750px;
+
+    .login__data--logo {
+      align-self: center;
+      background-image: url("../assets/chat.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: map-get($sizes, "marginTop");
       margin-top: map-get($sizes, "marginTop");
-      margin-bottom: 80px;
-      flex-direction: column;
-      width: 700px;
-      height: 750px;
-  
-      .login__data--logo {
-        align-self: center;
-        background-image: url("../assets/chat.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        margin-bottom: map-get($sizes, "marginTop");
-        margin-top: map-get($sizes, "marginTop");
-        width: 150px;
-        height: 150px;
-      }
-  
-      .login__data--title {
-        align-self: center;
-        color: map-get($colors, "primary");
-        font-weight: 300;
-        font-size: 30px;
-        margin-bottom: 10px;
-        width: 450px;
-      }
-  
-      .login__data--input {
-        align-self: center;
-        border: none;
-        border-radius: map-get($borderRadius, "primary");
-        background-color: map-get($colors, "greenInputLogIn");
-        margin-bottom: map-get($sizes, "marginTop");
-        width: 450px;
-        height: 40px;
-      }
-  
-      .login__data--button {
-        align-self: center;
-        background-color: map-get($colors, "primary");
-        border: none;
-        border-radius: map-get($borderRadius, "primary");
-        color: map-get($colors, "white");
-        margin-top: map-get($sizes, "marginTop");
-        font-size: map-get($fontSize, "secondary");
-        font-weight: 100;
-        width: map-get($sizes, "buttonWidth");
-        height: map-get($sizes, "buttonHeight");
-  
-        &:hover {
-          cursor: pointer;
-          background-color: #e5187491;
-          transition: 0.3s ease;
-        }
+      width: 90px;
+      height: 90px;
+    }
+
+    .login__data--title {
+      align-self: center;
+      color: map-get($colors, "primary");
+      font-weight: 300;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .login__data--input {
+      align-self: center;
+      border: none;
+      border-radius: map-get($borderRadius, "primary");
+      background-color: map-get($colors, "greenInputLogIn");
+      margin-bottom: map-get($sizes, "marginTop");
+      width: 300px;
+      height: 40px;
+    }
+
+    .login__data--button {
+      align-self: center;
+      background-color: map-get($colors, "primary");
+      border: none;
+      border-radius: map-get($borderRadius, "primary");
+      color: map-get($colors, "white");
+      margin-top: map-get($sizes, "marginTop");
+      font-size: map-get($fontSize, "secondary");
+      font-weight: 100;
+      width: 250px;
+      height: map-get($sizes, "buttonHeight");
+
+      &:hover {
+        cursor: pointer;
+        background-color: #e5187491;
+        transition: 0.3s ease;
       }
     }
   }
+}
 
 // Navbar Styles in mobile view
 
@@ -289,8 +288,6 @@ body {
   }
 }
 
-
-
 @media only screen and (min-width: 1440px) {
   // Navbar Styles in desktop view
   .navbar {
@@ -303,6 +300,31 @@ body {
       .navbar__image {
         width: 90px;
         height: 90px;
+      }
+    }
+  }
+
+  .login {
+  height: 100vh;
+
+    .login__data--container {
+        width: 700px;
+
+      .login__data--logo {
+        width: 150px;
+        height: 150px;
+      }
+
+      .login__data--title {
+        width: 450px;
+      }
+
+      .login__data--input {
+        width: 450px;
+      }
+
+      .login__data--button {
+        width: map-get($sizes, "buttonWidth");
       }
     }
   }

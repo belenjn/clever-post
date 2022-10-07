@@ -30,10 +30,11 @@ body {
   color: #e51873;
   text-align: center;
   font-size: 70px;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .login .login__secondTitle {
+  text-align: center;
   font-weight: 100;
   font-size: 30px;
   margin-top: 20px;
@@ -51,7 +52,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 700px;
+  width: 90%;
   height: 750px;
 }
 
@@ -65,8 +66,8 @@ body {
   background-position: center;
   margin-bottom: 50px;
   margin-top: 50px;
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
 }
 
 .login .login__data--container .login__data--title {
@@ -77,7 +78,6 @@ body {
   font-weight: 300;
   font-size: 30px;
   margin-bottom: 10px;
-  width: 450px;
 }
 
 .login .login__data--container .login__data--input {
@@ -88,7 +88,7 @@ body {
   border-radius: 8px;
   background-color: #1acf7e3b;
   margin-bottom: 50px;
-  width: 450px;
+  width: 300px;
   height: 40px;
 }
 
@@ -103,7 +103,7 @@ body {
   margin-top: 50px;
   font-size: 20px;
   font-weight: 100;
-  width: 300px;
+  width: 250px;
   height: 60px;
 }
 
@@ -322,6 +322,25 @@ body {
   .navbar .navbar__icon--container .navbar__image {
     width: 90px;
     height: 90px;
+  }
+  .login {
+    height: 100vh;
+  }
+  .login .login__data--container {
+    width: 700px;
+  }
+  .login .login__data--container .login__data--logo {
+    width: 150px;
+    height: 150px;
+  }
+  .login .login__data--container .login__data--title {
+    width: 450px;
+  }
+  .login .login__data--container .login__data--input {
+    width: 450px;
+  }
+  .login .login__data--container .login__data--button {
+    width: 300px;
   }
 }
 /*# sourceMappingURL=App.css.map */
