@@ -108,8 +108,6 @@ body {
       -ms-flex-pack: right;
           justify-content: right;
   background-color: #00000017;
-  height: 1000px;
-  width: 100%;
 }
 
 .sidebar__background .sidebar {
