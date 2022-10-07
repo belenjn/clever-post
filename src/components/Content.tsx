@@ -1,8 +1,11 @@
+import { Footer } from "./Footer";
+import { Navbar } from "./Navbar";
 
 export const Content = () => {
   return (
-    <div className="content">
-        Content
-    </div>
-  )
-}
+    <>
+      <Navbar />
+      <Footer />
+    </>
+  );
+};
