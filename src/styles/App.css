@@ -71,8 +71,132 @@ body {
       -ms-grid-row-align: center;
       align-self: center;
   margin-right: 40px;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.navbar .navbar__hamburger:hover {
+  cursor: pointer;
+}
+
+.navbar .navbar__cross--hidden {
+  display: none;
+}
+
+.navbar .navbar__cross {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-image: url("../assets/cruz.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-right: 40px;
+  width: 30px;
+  height: 30px;
+}
+
+.navbar .navbar__cross:hover {
+  cursor: pointer;
+}
+
+.sidebar__background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  background-color: #00000017;
+  height: 1000px;
+  width: 100%;
+}
+
+.sidebar__background .sidebar {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 500px;
+}
+
+.sidebar__background .sidebar .sidebar__userImage {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-image: url("../assets//userImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+}
+
+.sidebar__background .sidebar .sidebar__userName {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sidebar__background .sidebar .sidebar__logOutButton {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #e5182b;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 100;
+  width: 300px;
+  height: 60px;
+}
+
+.sidebar__background .sidebar .sidebar__logOutButton:hover {
+  cursor: pointer;
+  background-color: #ee5b69;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.sidebar__background .sidebar .sidebar__titleLatestPosts {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 80px;
+  width: 300px;
+}
+
+.sidebar__background .sidebar .sidebar__latestPost--list {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  margin-bottom: 50px;
+  width: 300px;
+  height: 400px;
+}
+
+.sidebar__background .sidebar .sidebar__latestPost--list .sidebar__latestPost--items {
+  background-color: #e3fcf1;
+  border-radius: 8px;
+  text-align: center;
+  height: 80px;
 }
 
 .footer {
@@ -98,10 +222,6 @@ body {
   .navbar .navbar__icon--container .navbar__image {
     width: 90px;
     height: 90px;
-  }
-  .navbar .navbar__hamburger {
-    width: 30px;
-    height: 30px;
   }
 }
 /*# sourceMappingURL=App.css.map */

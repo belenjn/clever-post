@@ -1,12 +1,38 @@
+import { useState } from "react";
+import { Sidebar } from "./Sidebar";
 
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleClickHamburger = () => {
+    setIsOpen(true);
+  };
+
+  const handleClickCross = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div className="navbar">
-      <div className="navbar__icon--container">
-        <h1>CLEVER-POST</h1>
-        <div className="navbar__image" />
+    <>
+      <div className="navbar">
+        <div className="navbar__icon--container">
+          <h1>CLEVER-POST</h1>
+          <div className="navbar__image" />
+        </div>
+        <div
+          className={
+            isOpen === true ? "navbar__cross--hidden" : "navbar__hamburger"
+          }
+          onClick={handleClickHamburger}
+        />
+        <div
+          className={
+            isOpen === true ? "navbar__cross" : "navbar__cross--hidden"
+          }
+          onClick={handleClickCross}
+        />
       </div>
-      <div className="navbar__hamburger"/>
-    </div>
+      {isOpen === true ? <Sidebar /> : ""}
+    </>
   );
 };
