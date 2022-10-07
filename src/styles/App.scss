@@ -6,7 +6,7 @@ $colors: (
   "white": #ffffff,
   "green": #00b25c,
   "greenHover": #1acf7f,
-  "greenInputLogIn": #1acf7eda,
+  "greenInputLogIn": #1acf7e3b,
   "greenCards": #e3fcf1,
   "red": #e5182b,
   "redHover": #ee5b69,
@@ -24,7 +24,9 @@ $borderRadius: (
 
 $sizes: (
   "primary": 400px,
-  "marginNavbar": 50px,
+  "marginTop": 50px,
+  "buttonWidth": 300px,
+  "buttonHeight": 60px,
 );
 
 // Reset styles
@@ -40,6 +42,91 @@ html,
 body {
   min-width: 320px;
 }
+
+// Login Styles in mobile view
+
+// TODO: arreglar login en la vista mobile
+
+.login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($colors, "secondary");
+  
+    .login__title {
+      color: map-get($colors, "primary");
+      text-align: center;
+      font-size: 70px;
+      margin-top: 60px;
+    }
+  
+    .login__secondTitle {
+      font-weight: 100;
+      font-size: 30px;
+      margin-top: 20px;
+    }
+  
+    .login__data--container {
+      background-color: map-get($colors, "white");
+      border-radius: map-get($borderRadius, "primary");
+      display: flex;
+      margin-top: map-get($sizes, "marginTop");
+      margin-bottom: 80px;
+      flex-direction: column;
+      width: 700px;
+      height: 750px;
+  
+      .login__data--logo {
+        align-self: center;
+        background-image: url("../assets/chat.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: map-get($sizes, "marginTop");
+        margin-top: map-get($sizes, "marginTop");
+        width: 150px;
+        height: 150px;
+      }
+  
+      .login__data--title {
+        align-self: center;
+        color: map-get($colors, "primary");
+        font-weight: 300;
+        font-size: 30px;
+        margin-bottom: 10px;
+        width: 450px;
+      }
+  
+      .login__data--input {
+        align-self: center;
+        border: none;
+        border-radius: map-get($borderRadius, "primary");
+        background-color: map-get($colors, "greenInputLogIn");
+        margin-bottom: map-get($sizes, "marginTop");
+        width: 450px;
+        height: 40px;
+      }
+  
+      .login__data--button {
+        align-self: center;
+        background-color: map-get($colors, "primary");
+        border: none;
+        border-radius: map-get($borderRadius, "primary");
+        color: map-get($colors, "white");
+        margin-top: map-get($sizes, "marginTop");
+        font-size: map-get($fontSize, "secondary");
+        font-weight: 100;
+        width: map-get($sizes, "buttonWidth");
+        height: map-get($sizes, "buttonHeight");
+  
+        &:hover {
+          cursor: pointer;
+          background-color: #e5187491;
+          transition: 0.3s ease;
+        }
+      }
+    }
+  }
 
 // Navbar Styles in mobile view
 
@@ -129,7 +216,7 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      margin-top: map-get($sizes, "marginNavbar");
+      margin-top: map-get($sizes, "marginTop");
       width: 150px;
       height: 150px;
     }
@@ -147,8 +234,8 @@ body {
       color: map-get($colors, "white");
       font-size: map-get($fontSize, "secondary");
       font-weight: 100;
-      width: 300px;
-      height: 60px;
+      width: map-get($sizes, "buttonWidth");
+      height: map-get($sizes, "buttonHeight");
 
       &:hover {
         cursor: pointer;
@@ -171,7 +258,7 @@ body {
       flex-direction: column;
       justify-content: space-around;
       list-style: none;
-      margin-bottom: map-get($sizes, "marginNavbar");
+      margin-bottom: map-get($sizes, "marginTop");
       width: 300px;
       height: 400px;
 
@@ -201,6 +288,8 @@ body {
     margin-top: 80px;
   }
 }
+
+
 
 @media only screen and (min-width: 1440px) {
   // Navbar Styles in desktop view
