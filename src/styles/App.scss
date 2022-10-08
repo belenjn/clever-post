@@ -102,6 +102,8 @@ body {
       border-radius: map-get($borderRadius, "primary");
       background-color: map-get($colors, "greenInputLogIn");
       margin-bottom: map-get($sizes, "marginTop");
+      font-size: 25px;
+      padding: 15px;
       width: 300px;
       height: 40px;
     }

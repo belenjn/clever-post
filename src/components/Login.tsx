@@ -1,4 +1,19 @@
-export const Login = () => {
+export const Login = ({ setAuthenticated }: { setAuthenticated: any }) => {
+
+    interface User {
+        username: string,
+        password: string
+    }
+
+    const user1: User = {
+        username: 'user1',
+        password: '123456'
+    }
+
+  const handleClick = (): void => {
+    setAuthenticated(true)
+  };
+
   return (
     <div className="login">
       <h1 className="login__title">WELCOME TO CLEVER-POST</h1>
@@ -10,12 +25,14 @@ export const Login = () => {
         <div className="login__data--logo" />
 
         <h4 className="login__data--title">Username:</h4>
-        <input type="text" className="login__data--input" />
+        <input required type="text" defaultValue={user1.username} className="login__data--input" />
 
         <h4 className="login__data--title">Password:</h4>
-        <input type="password" className="login__data--input" />
+        <input required type="password" defaultValue={user1.password}  className="login__data--input" />
 
-        <button className="login__data--button">Log In</button>
+        <button className="login__data--button" onClick={handleClick}>
+          Log In
+        </button>
       </div>
     </div>
   );
