@@ -1,17 +1,20 @@
-export const Login = ({ setAuthenticated }: { setAuthenticated: any }) => {
+export const Login = ({
+  setAuthenticated,
+}: {
+  setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  interface User {
+    username: string;
+    password: string;
+  }
 
-    interface User {
-        username: string,
-        password: string
-    }
-
-    const user1: User = {
-        username: 'user1',
-        password: '123456'
-    }
+  const user1: User = {
+    username: "user1",
+    password: "123456",
+  };
 
   const handleClick = (): void => {
-    setAuthenticated(true)
+    setAuthenticated(true);
   };
 
   return (
@@ -25,10 +28,20 @@ export const Login = ({ setAuthenticated }: { setAuthenticated: any }) => {
         <div className="login__data--logo" />
 
         <h4 className="login__data--title">Username:</h4>
-        <input required type="text" defaultValue={user1.username} className="login__data--input" />
+        <input
+          required
+          type="text"
+          defaultValue={user1.username}
+          className="login__data--input"
+        />
 
         <h4 className="login__data--title">Password:</h4>
-        <input required type="password" defaultValue={user1.password}  className="login__data--input" />
+        <input
+          required
+          type="password"
+          defaultValue={user1.password}
+          className="login__data--input"
+        />
 
         <button className="login__data--button" onClick={handleClick}>
           Log In

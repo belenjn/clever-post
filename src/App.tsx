@@ -13,8 +13,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-        <Route path="/" element={<PrivateRoute component={<Content/>} auth={authenticated}/>} />
+        {/* <Route path="/" element={<PrivateRoute component={<Content/>} auth={authenticated}/>} /> */}
         <Route path="/login" element={<Login setAuthenticated={setAuthenticated}/>} />
+        <Route path="/" element={<Content/>} />
           {/* <Route path="*" element={<NotFound />} /> */} 
           //TODO: hacer pagina 404
         </Routes>
