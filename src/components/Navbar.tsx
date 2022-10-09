@@ -4,11 +4,11 @@ import { Sidebar } from "./Sidebar";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleClickHamburger = () => {
+  const handleClickHamburger = ():void => {
     setIsOpen(true);
   };
 
-  const handleClickCross = () => {
+  const handleClickCross = ():void => {
     setIsOpen(false);
   };
 

@@ -1,6 +1,5 @@
 export const Sidebar = () => {
   return (
-    <div className="sidebar__background">
       <div className="sidebar">
         <div className="sidebar__userImage"/>
         <h3 className="sidebar__userName">User Test Name</h3>
@@ -14,6 +13,5 @@ export const Sidebar = () => {
             Log Out
         </button>
       </div>
-    </div>
   );
 };

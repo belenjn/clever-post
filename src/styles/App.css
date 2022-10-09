@@ -205,17 +205,7 @@ body {
   cursor: pointer;
 }
 
-.sidebar__background {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-  background-color: #00000017;
-}
-
-.sidebar__background .sidebar {
+.sidebar {
   background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -224,11 +214,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
-  width: 500px;
+  position: absolute;
+  right: 0;
+  height: 700px;
+  width: 375px;
+  z-index: 2;
 }
 
-.sidebar__background .sidebar .sidebar__userImage {
+.sidebar .sidebar__userImage {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -237,16 +230,17 @@ body {
   background-size: cover;
   background-position: center;
   margin-top: 50px;
-  width: 150px;
-  height: 150px;
+  width: 60px;
+  height: 60px;
 }
 
-.sidebar__background .sidebar .sidebar__userName {
+.sidebar .sidebar__userName {
   text-align: center;
   margin-top: 30px;
+  overflow-y: hidden;
 }
 
-.sidebar__background .sidebar .sidebar__logOutButton {
+.sidebar .sidebar__logOutButton {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -260,24 +254,25 @@ body {
   height: 60px;
 }
 
-.sidebar__background .sidebar .sidebar__logOutButton:hover {
+.sidebar .sidebar__logOutButton:hover {
   cursor: pointer;
   background-color: #ee5b69;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 
-.sidebar__background .sidebar .sidebar__titleLatestPosts {
+.sidebar .sidebar__titleLatestPosts {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   font-weight: 400;
   font-size: 20px;
-  margin-top: 80px;
+  margin-top: 40px;
   width: 300px;
+  overflow-y: hidden;
 }
 
-.sidebar__background .sidebar .sidebar__latestPost--list {
+.sidebar .sidebar__latestPost--list {
   -ms-flex-item-align: center;
       align-self: center;
   display: -webkit-box;
@@ -290,12 +285,12 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   list-style: none;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   width: 300px;
   height: 400px;
 }
 
-.sidebar__background .sidebar .sidebar__latestPost--list .sidebar__latestPost--items {
+.sidebar .sidebar__latestPost--list .sidebar__latestPost--items {
   background-color: #e3fcf1;
   border-radius: 8px;
   text-align: center;
@@ -350,6 +345,88 @@ body {
   }
   .login .login__data--container .login__data--button {
     width: 300px;
+  }
+  .sidebar {
+    background-color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    right: 0;
+    height: 900px;
+    width: 500px;
+    z-index: 2;
+  }
+  .sidebar .sidebar__userImage {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    background-image: url("../assets//userImage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 50px;
+    width: 150px;
+    height: 150px;
+  }
+  .sidebar .sidebar__userName {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .sidebar .sidebar__logOutButton {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    background-color: #e5182b;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 100;
+    width: 300px;
+    height: 60px;
+  }
+  .sidebar .sidebar__logOutButton:hover {
+    cursor: pointer;
+    background-color: #ee5b69;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+  }
+  .sidebar .sidebar__titleLatestPosts {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 80px;
+    width: 300px;
+  }
+  .sidebar .sidebar__latestPost--list {
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    list-style: none;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 400px;
+  }
+  .sidebar .sidebar__latestPost--list .sidebar__latestPost--items {
+    background-color: #e3fcf1;
+    border-radius: 8px;
+    text-align: center;
+    height: 80px;
   }
   .grid {
     background-color: #fde8f1;
