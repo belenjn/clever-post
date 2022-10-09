@@ -176,8 +176,8 @@ body {
       -ms-grid-row-align: center;
       align-self: center;
   margin-right: 40px;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 .navbar .navbar__hamburger:hover {
@@ -197,8 +197,8 @@ body {
   background-size: cover;
   background-position: center;
   margin-right: 40px;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 .navbar .navbar__cross:hover {
