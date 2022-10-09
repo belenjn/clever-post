@@ -206,7 +206,7 @@ body {
   flex-direction: column;
   position: absolute;
   right: 0;
-  height: 900px;
+  height: 800px;
   width: 375px;
   z-index: 2;
 
@@ -275,6 +275,8 @@ body {
 
 // Grid Styles in mobile view
 
+//TODO: arreglar la vista mobile del grid
+
 // Footer Styles in mobile view
 
 .footer {
@@ -334,7 +336,7 @@ body {
   }
 
   .sidebar {
-    height: 900px;
+    height: 950px;
     width: 500px;
 
     .sidebar__userImage {

@@ -218,7 +218,7 @@ body {
           flex-direction: column;
   position: absolute;
   right: 0;
-  height: 900px;
+  height: 800px;
   width: 375px;
   z-index: 2;
 }
@@ -349,7 +349,7 @@ body {
     width: 300px;
   }
   .sidebar {
-    height: 900px;
+    height: 950px;
     width: 500px;
   }
   .sidebar .sidebar__userImage {
