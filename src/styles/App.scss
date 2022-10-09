@@ -378,9 +378,23 @@ body {
   .grid__card {
     display: flex;
     justify-self: center;
+    flex-direction: column;
     background-color: map-get($colors, "white");
     text-align: center;
     height: 400px;
     width: 400px;
+
+    .grid__card--title-image {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-between;
+        border: 1px solid red;
+
+        h3 {
+            text-align: left;
+        }
+    }
   }
 }
