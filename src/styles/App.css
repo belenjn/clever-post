@@ -384,12 +384,17 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    gap: 10px;
+    gap: 25px;
+    padding: 30px;
     margin-top: 40px;
     margin-bottom: 40px;
     width: 95%;
+    height: 100%;
   }
   .grid__card {
+    border-radius: 8px;
+    -webkit-box-shadow: 10px 10px 29px -6px #b0aab0;
+            box-shadow: 10px 10px 29px -6px #b0aab0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -414,14 +419,58 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 10px;
+    padding: 20px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    border: 1px solid red;
   }
   .grid__card .grid__card--title-image h3 {
     text-align: left;
+    width: 70%;
+  }
+  .grid__card .grid__card--title-image .grid__card--image {
+    background-image: url("../assets/userImage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 500px;
+    width: 90px;
+    height: 90px;
+  }
+  .grid__card p {
+    font-weight: 100;
+    line-height: 30px;
+    text-align: justify;
+    padding: 20px;
+  }
+  .grid__card .grid__card--icons-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .grid__card .grid__card--icons-container .grid__card--icons-container-edit {
+    background-image: url("../assets/pencil.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  .grid__card .grid__card--icons-container .grid__card--icons-container-delete {
+    background-image: url("../assets/trash.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 20px;
   }
 }
 /*# sourceMappingURL=App.css.map */
