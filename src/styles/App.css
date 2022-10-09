@@ -6,6 +6,7 @@ html,
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -352,17 +353,36 @@ body {
   }
   .grid {
     background-color: #fde8f1;
-    border: 1px solid red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .grid .grid__container {
+    background-color: #fde8f1;
     display: -ms-grid;
     display: grid;
-    gap: 50px;
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 95%;
   }
   .grid__card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
     background-color: #ffffff;
-    height: 300px;
-    width: 300px;
+    text-align: center;
+    height: 400px;
+    width: 400px;
   }
 }
 /*# sourceMappingURL=App.css.map */

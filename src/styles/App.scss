@@ -37,6 +37,7 @@ html,
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -334,15 +335,27 @@ body {
 
   .grid {
     background-color: map-get($colors, "secondary");
-    border: 1px solid red;
-    display: grid;
-    gap: 50px;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+
+    .grid__container {
+      background-color: map-get($colors, "secondary");
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      gap: 10px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      width: 95%;
+    }
   }
 
   .grid__card {
+    display: flex;
+    justify-self: center;
     background-color: map-get($colors, "white");
-    height: 300px;
-    width: 300px;
+    text-align: center;
+    height: 400px;
+    width: 400px;
   }
 }

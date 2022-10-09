@@ -1,19 +1,22 @@
-import { GridCard } from "./GridCard"
+import { GridCard } from "./GridCard";
 
 export const Grid = () => {
   return (
     <div className="grid">
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
-      <GridCard/>
+      <div className="grid__container">
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+        <GridCard />
+      </div>
     </div>
-  )
-}
+  );
+};
