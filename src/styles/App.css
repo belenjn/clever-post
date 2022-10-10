@@ -527,6 +527,9 @@ body {
 }
 
 @media only screen and (min-width: 810px) {
+  .login .login__data--container {
+    width: 500px;
+  }
   .grid {
     background-color: #fde8f1;
     display: -webkit-box;
@@ -611,20 +614,23 @@ body {
     height: 100vh;
   }
   .login .login__data--container {
-    width: 700px;
+    width: 600px;
   }
   .login .login__data--container .login__data--logo {
-    width: 150px;
-    height: 150px;
+    width: 90px;
+    height: 90px;
   }
   .login .login__data--container .login__data--title {
+    text-align: center;
+    font-size: 25px;
     width: 450px;
   }
   .login .login__data--container .login__data--input {
-    width: 450px;
+    width: 300px;
   }
   .login .login__data--container .login__data--button {
     width: 300px;
+    margin-bottom: 50px;
   }
   .sidebar {
     height: 950px;

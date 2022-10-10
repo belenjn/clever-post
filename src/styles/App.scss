@@ -448,6 +448,12 @@ body {
 }
 
 @media only screen and (min-width: 810px) {
+  .login {
+    .login__data--container {
+      width: 500px;
+    }
+  }
+
   .grid {
     background-color: map-get($colors, "secondary");
     display: flex;
@@ -520,24 +526,28 @@ body {
   .login {
     height: 100vh;
 
+
     .login__data--container {
-      width: 700px;
+      width: 600px;
 
       .login__data--logo {
-        width: 150px;
-        height: 150px;
+        width: 90px;
+        height: 90px;
       }
 
       .login__data--title {
+        text-align: center;
+        font-size: 25px;
         width: 450px;
       }
 
       .login__data--input {
-        width: 450px;
+        width: map-get($sizes, "buttonWidth");
       }
 
       .login__data--button {
         width: map-get($sizes, "buttonWidth");
+        margin-bottom: map-get($sizes, "marginTop");
       }
     }
   }
