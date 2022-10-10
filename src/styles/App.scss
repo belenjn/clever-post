@@ -275,7 +275,94 @@ body {
 
 // Grid Styles in mobile view
 
-//TODO: arreglar la vista mobile del grid
+.grid {
+  background-color: map-get($colors, "secondary");
+  display: flex;
+  justify-content: center;
+
+  .grid__container {
+    background-color: map-get($colors, "secondary");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 95%;
+    height: 100%;
+  }
+}
+
+.grid__card {
+  border-radius: map-get($borderRadius, "primary");
+  box-shadow: 10px 10px 29px -6px rgba(176, 170, 176, 1);
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  background-color: map-get($colors, "white");
+  text-align: center;
+  height: 300px;
+  width: 300px;
+
+  .grid__card--title-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+
+    h3 {
+      text-align: left;
+      width: 70%;
+      font-size: map-get($fontSize, "primary");
+    }
+
+    .grid__card--image {
+      background-image: url("../assets/userImage.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: map-get($borderRadius, "secondary");
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  p {
+    font-weight: 100;
+    line-height: 17px;
+    font-size: 12px;
+    text-align: justify;
+    padding: 20px;
+  }
+
+  .grid__card--icons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .grid__card--icons-container-edit {
+      background-image: url("../assets/pencil.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-right: 20px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .grid__card--icons-container-delete {
+      background-image: url("../assets/trash.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
 
 // Footer Styles in mobile view
 
@@ -291,6 +378,117 @@ body {
     color: map-get($colors, "white");
     font-weight: 100;
     text-align: center;
+  }
+}
+
+// Page not found styles in mobile
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+
+  .notFound__image {
+    display: flex;
+    background-image: url("../assets/notfound.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+    width: 500px;
+    height: 500px;
+  }
+
+  h1 {
+    align-self: center;
+    font-size: 70px;
+    color: map-get($colors, "primary");
+  }
+
+  p {
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  button {
+    align-self: center;
+    background-color: map-get($colors, "primary");
+    border-radius: map-get($borderRadius, "primary");
+    border: none;
+    font-size: map-get($fontSize, "secondary");
+    font-weight: 100;
+    width: map-get($sizes, "buttonWidth");
+    height: map-get($sizes, "buttonHeight");
+
+    &:hover {
+      cursor: pointer;
+      background-color: #e5187490;
+      transition: 0.3s ease;
+    }
+
+    a {
+      text-decoration: none;
+      color: map-get($colors, "white");
+    }
+  }
+}
+
+@media only screen and (min-width: 810px) {
+  .grid {
+    background-color: map-get($colors, "secondary");
+    display: flex;
+    justify-content: center;
+
+    .grid__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+    }
+  }
+
+  .grid__card {
+    height: 350px;
+    width: 350px;
+
+    .grid__card--title-image {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 20px;
+      justify-content: space-between;
+
+      .grid__card--image {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    p {
+      line-height: 20px;
+      font-size: 14px;
+    }
+
+    .grid__card--icons-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .grid__card--icons-container-edit {
+        width: 30px;
+        height: 30px;
+      }
+
+      .grid__card--icons-container-delete {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
 }
 
@@ -364,7 +562,6 @@ body {
     justify-content: center;
 
     .grid__container {
-      background-color: map-get($colors, "secondary");
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       justify-content: center;
@@ -378,13 +575,6 @@ body {
   }
 
   .grid__card {
-    border-radius: map-get($borderRadius, "primary");
-    box-shadow: 10px 10px 29px -6px rgba(176,170,176,1);
-    display: flex;
-    justify-self: center;
-    flex-direction: column;
-    background-color: map-get($colors, "white");
-    text-align: center;
     height: 400px;
     width: 400px;
 
@@ -395,51 +585,32 @@ body {
       padding: 20px;
       justify-content: space-between;
 
-      h3 {
-        text-align: left;
-        width: 70%;
-      }
-
       .grid__card--image {
-        background-image: url("../assets/userImage.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        border-radius: map-get($borderRadius, "secondary");
         width: 90px;
         height: 90px;
       }
     }
 
     p {
-      font-weight: 100;
-      line-height: 30px;
-      text-align: justify;
-      padding: 20px;
+      line-height: 25px;
+      font-size: 14px;
     }
 
     .grid__card--icons-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
 
       .grid__card--icons-container-edit {
-        background-image: url("../assets/pencil.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        margin-right: 20px;
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
       }
 
       .grid__card--icons-container-delete {
-        background-image: url("../assets/trash.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
       }
     }
   }
