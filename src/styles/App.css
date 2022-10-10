@@ -42,7 +42,7 @@ body {
       align-self: center;
   color: #e51873;
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   margin-top: 100px;
   height: 80px;
 }
@@ -55,7 +55,7 @@ body {
   font-weight: 100;
   font-size: 20px;
   margin-top: 20px;
-  height: 40px;
+  height: 50px;
 }
 
 .login .login__data--container {
@@ -744,6 +744,90 @@ body {
   }
   .notFound {
     margin-top: 100px;
+  }
+  .showGridCard__background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: rgba(179, 179, 179, 0.136);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+  }
+  .showGridCard__background .showGridCard__container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    -ms-flex-item-align: center;
+        align-self: center;
+    padding: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 600px;
+    height: 600px;
+  }
+  .showGridCard__background .showGridCard__container--title-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .showGridCard__background .showGridCard__container--title-image h3 {
+    width: 60%;
+    font-size: 30px;
+  }
+  .showGridCard__background .showGridCard__container--image {
+    background-image: url("../assets/userImage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+  }
+  .showGridCard__background p {
+    font-weight: 100;
+    line-height: 30px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    text-align: justify;
+    margin-top: 80px;
+  }
+  .showGridCard__background .showGridCard__container--button {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    background-color: #00b25c;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 50px;
+    font-weight: 100;
+    width: 300px;
+    height: 60px;
+  }
+  .showGridCard__background .showGridCard__container--button:hover {
+    cursor: pointer;
+    background-color: #1acf7f;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,7 +1,15 @@
 import React from "react";
+import { ShowGridCard } from "./ShowGridCard";
 
 export const GridCard = () => {
+  
+
+  const handleClickEdit = () => {
+    console.log("edit")
+  }
+
   return (
+    <>
     <div className="grid__card">
       <div className="grid__card--title-image">
         <h3>
@@ -18,9 +26,11 @@ export const GridCard = () => {
       </p>
 
       <div className="grid__card--icons-container">
-        <div className="grid__card--icons-container-edit"/>
+        <div className="grid__card--icons-container-edit" onClick={handleClickEdit}/>
         <div className="grid__card--icons-container-delete"/>
       </div>
     </div>
+    </>
+    
   );
 };

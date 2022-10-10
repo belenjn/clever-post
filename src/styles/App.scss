@@ -62,7 +62,7 @@ body {
     align-self: center;
     color: map-get($colors, "primary");
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
     margin-top: 100px;
     height: 80px;
   }
@@ -73,7 +73,7 @@ body {
     font-weight: 100;
     font-size: 20px;
     margin-top: 20px;
-    height: 40px;
+    height: 50px;
   }
 
   .login__data--container {
@@ -459,6 +459,7 @@ body {
   }
 }
 
+
 @media only screen and (min-width: 810px) {
   .login {
     .login__data--container {
@@ -647,5 +648,75 @@ body {
 
   .notFound {
     margin-top: 100px;
+  }
+
+  .showGridCard__background {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(179, 179, 179, 0.136);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+
+    .showGridCard__container {
+        background-color: map-get($colors, "white");
+        border-radius: map-get($borderRadius, "primary");
+        align-self: center;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        height: 600px;
+    }
+
+    .showGridCard__container--title-image {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h3 {
+            width: 60%;
+            font-size: 30px;
+        }
+    }
+
+    .showGridCard__container--image{
+        background-image: url("../assets/userImage.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 150px;
+        height: 150px;
+    }
+
+    p {
+        font-weight: 100;
+        line-height: 30px;
+        align-self: center;
+        text-align: justify;
+        margin-top: 80px;
+    }
+
+    .showGridCard__container--button {
+        align-self: center;
+        background-color: map-get($colors, "green");
+        border-radius: map-get($borderRadius, "primary");
+        border: none;
+        color: map-get($colors, "white");
+        font-size: map-get($fontSize, "secondary");
+        margin-top: map-get($sizes, "marginTop");
+        font-weight: 100;
+        width: map-get($sizes, "buttonWidth");
+        height: map-get($sizes, "buttonHeight");
+    
+        &:hover {
+          cursor: pointer;
+          background-color: map-get($colors, "greenHover");
+          transition: 0.3s ease;
+        }
+      }
   }
 }

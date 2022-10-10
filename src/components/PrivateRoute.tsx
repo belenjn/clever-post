@@ -2,10 +2,10 @@ import { Navigate } from "react-router-dom";
 
 export const PrivateRoute = ({
   component: Component,
-  auth,
+  authenticated,
 }: {
-  component: React.FunctionComponent<{}>
-  auth: boolean;
+  component: React.FunctionComponent;
+  authenticated: boolean;
 }) => {
-  return auth === true ? <Component /> : <Navigate to="/login" />;
+  return authenticated === true ? <Component /> : <Navigate to="/login" />;
 };

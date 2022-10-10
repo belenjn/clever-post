@@ -4,6 +4,7 @@ import { Content } from "./components/Content";
 import { Login } from "./components/Login";
 import { NotFound } from "./components/NotFound";
 import {PrivateRoute} from "./components/PrivateRoute";
+import { ShowGridCard } from "./components/ShowGridCard";
 import "./styles/App.scss";
 
 function App() {
@@ -14,12 +15,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-        {/* <Route path="/" element={<PrivateRoute component={<Content/>} auth={authenticated}/>} /> */}
+        {/* {<Route path="/" element={<PrivateRoute component={<Content/>} authenticated={authenticated}/>} />} */}
         <Route path="/login" element={<Login setAuthenticated={setAuthenticated}/>} />
         <Route path="/" element={<Content/>} />
         <Route path="*" element={<NotFound/>} />
-          {/* <Route path="*" element={<NotFound />} /> */} 
-          //TODO: hacer pagina 404
         </Routes>
       </BrowserRouter>
     </div>
