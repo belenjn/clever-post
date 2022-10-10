@@ -433,6 +433,10 @@ body {
   height: 20px;
 }
 
+.grid__card .grid__card--icons-container .grid__card--icons-container-edit:hover {
+  cursor: pointer;
+}
+
 .grid__card .grid__card--icons-container .grid__card--icons-container-delete {
   background-image: url("../assets/trash.png");
   background-repeat: no-repeat;
@@ -440,6 +444,10 @@ body {
   background-position: center;
   width: 20px;
   height: 20px;
+}
+
+.grid__card .grid__card--icons-container .grid__card--icons-container-delete:hover {
+  cursor: pointer;
 }
 
 .footer {

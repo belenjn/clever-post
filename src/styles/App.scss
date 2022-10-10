@@ -363,6 +363,10 @@ body {
       margin-right: 20px;
       width: 20px;
       height: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .grid__card--icons-container-delete {
@@ -372,6 +376,10 @@ body {
       background-position: center;
       width: 20px;
       height: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
