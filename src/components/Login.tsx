@@ -15,6 +15,7 @@ export const Login = ({
 
   const handleClick = (): void => {
     setAuthenticated(true);
+    console.log("Login");
   };
 
   return (

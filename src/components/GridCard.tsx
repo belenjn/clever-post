@@ -4,9 +4,9 @@ import { ShowGridCard } from "./ShowGridCard";
 export const GridCard = () => {
   
 
-  const handleClickEdit = () => {
-    console.log("edit")
-  }
+  // const handleClickEdit = () => {
+  //   console.log("edit")
+  // }
 
   return (
     <>
@@ -26,7 +26,7 @@ export const GridCard = () => {
       </p>
 
       <div className="grid__card--icons-container">
-        <div className="grid__card--icons-container-edit" onClick={handleClickEdit}/>
+        <div className="grid__card--icons-container-edit" />
         <div className="grid__card--icons-container-delete"/>
       </div>
     </div>
