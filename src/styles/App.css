@@ -9,6 +9,15 @@ html,
   overflow-x: hidden;
 }
 
+button:hover {
+  -webkit-box-shadow: 2px 4px 46px -10px rgba(115, 115, 115, 0.667);
+          box-shadow: 2px 4px 46px -10px rgba(115, 115, 115, 0.667);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
 body {
   min-width: 320px;
 }
@@ -209,6 +218,8 @@ body {
   -webkit-box-shadow: 0px 7px 52px -1px rgba(156, 153, 156, 0.68);
           box-shadow: 0px 7px 52px -1px rgba(156, 153, 156, 0.68);
   background-color: #ffffff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -453,6 +464,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 50px;
+  padding: 50px;
 }
 
 .notFound .notFound__image {

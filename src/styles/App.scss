@@ -40,6 +40,13 @@ html,
   overflow-x: hidden;
 }
 
+button:hover {
+    box-shadow: 2px 4px 46px -10px rgba(115, 115, 115, 0.667);
+    transform: scale(1.03);
+    transition: 0.2s ease;
+
+}
+
 body {
   min-width: 320px;
 }
@@ -202,6 +209,8 @@ body {
 .sidebar {
   box-shadow: 0px 7px 52px -1px rgba(156, 153, 156, 0.68);
   background-color: map-get($colors, "white");
+  border-bottom-left-radius: map-get($borderRadius, "primary");
+  border-bottom-right-radius: map-get($borderRadius, "primary");
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -387,6 +396,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  padding: 50px;
 
   .notFound__image {
     display: flex;
