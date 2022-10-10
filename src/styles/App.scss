@@ -59,17 +59,21 @@ body {
   background-color: map-get($colors, "secondary");
 
   .login__title {
+    align-self: center;
     color: map-get($colors, "primary");
     text-align: center;
-    font-size: 70px;
+    font-size: 50px;
     margin-top: 100px;
+    height: 80px;
   }
 
   .login__secondTitle {
+    align-self: center;
     text-align: center;
     font-weight: 100;
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 20px;
+    height: 40px;
   }
 
   .login__data--container {
@@ -525,7 +529,6 @@ body {
 
   .login {
     height: 100vh;
-
 
     .login__data--container {
       width: 600px;
