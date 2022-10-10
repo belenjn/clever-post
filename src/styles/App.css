@@ -452,7 +452,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .notFound .notFound__image {
@@ -707,6 +707,9 @@ body {
   .grid__card .grid__card--icons-container .grid__card--icons-container-delete {
     width: 30px;
     height: 30px;
+  }
+  .notFound {
+    margin-top: 100px;
   }
 }
 /*# sourceMappingURL=App.css.map */
