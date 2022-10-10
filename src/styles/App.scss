@@ -62,8 +62,9 @@ body {
     align-self: center;
     color: map-get($colors, "primary");
     text-align: center;
-    font-size: 30px;
-    margin-top: 100px;
+    font-size: 35px;
+    padding: 4px;
+    margin-top: 60px;
     height: 80px;
   }
 
@@ -74,6 +75,7 @@ body {
     font-size: 20px;
     margin-top: 20px;
     height: 50px;
+    width: 70%;
   }
 
   .login__data--container {
@@ -84,7 +86,7 @@ body {
     margin-bottom: 80px;
     flex-direction: column;
     width: 90%;
-    height: 750px;
+    height: 600px;
 
     .login__data--logo {
       align-self: center;
@@ -94,16 +96,18 @@ body {
       background-position: center;
       margin-bottom: map-get($sizes, "marginTop");
       margin-top: map-get($sizes, "marginTop");
-      width: 90px;
-      height: 90px;
+      width: 70px;
+      height: 70px;
     }
 
     .login__data--title {
       align-self: center;
       color: map-get($colors, "primary");
       font-weight: 300;
-      font-size: 30px;
+      font-size: 20px;
       margin-bottom: 10px;
+      height: 40px;
+      width: 300px;
     }
 
     .login__data--input {
@@ -112,7 +116,7 @@ body {
       border-radius: map-get($borderRadius, "primary");
       background-color: map-get($colors, "greenInputLogIn");
       margin-bottom: map-get($sizes, "marginTop");
-      font-size: 25px;
+      font-size: 20px;
       padding: 15px;
       width: 300px;
       height: 40px;
@@ -543,18 +547,22 @@ body {
       width: 600px;
 
       .login__data--logo {
-        width: 90px;
-        height: 90px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 70px;
+        height: 70px;
       }
 
       .login__data--title {
         text-align: center;
-        font-size: 25px;
+        font-size: 20px;
         width: 450px;
       }
 
       .login__data--input {
         width: map-get($sizes, "buttonWidth");
+        font-size: 14px;
       }
 
       .login__data--button {

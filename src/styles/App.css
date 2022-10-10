@@ -42,8 +42,9 @@ body {
       align-self: center;
   color: #e51873;
   text-align: center;
-  font-size: 30px;
-  margin-top: 100px;
+  font-size: 35px;
+  padding: 4px;
+  margin-top: 60px;
   height: 80px;
 }
 
@@ -56,6 +57,7 @@ body {
   font-size: 20px;
   margin-top: 20px;
   height: 50px;
+  width: 70%;
 }
 
 .login .login__data--container {
@@ -71,7 +73,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 90%;
-  height: 750px;
+  height: 600px;
 }
 
 .login .login__data--container .login__data--logo {
@@ -84,8 +86,8 @@ body {
   background-position: center;
   margin-bottom: 50px;
   margin-top: 50px;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
 }
 
 .login .login__data--container .login__data--title {
@@ -94,8 +96,10 @@ body {
       align-self: center;
   color: #e51873;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 10px;
+  height: 40px;
+  width: 300px;
 }
 
 .login .login__data--container .login__data--input {
@@ -106,7 +110,7 @@ body {
   border-radius: 8px;
   background-color: #1acf7e3b;
   margin-bottom: 50px;
-  font-size: 25px;
+  font-size: 20px;
   padding: 15px;
   width: 300px;
   height: 40px;
@@ -633,16 +637,20 @@ body {
     width: 600px;
   }
   .login .login__data--container .login__data--logo {
-    width: 90px;
-    height: 90px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 70px;
+    height: 70px;
   }
   .login .login__data--container .login__data--title {
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     width: 450px;
   }
   .login .login__data--container .login__data--input {
     width: 300px;
+    font-size: 14px;
   }
   .login .login__data--container .login__data--button {
     width: 300px;
