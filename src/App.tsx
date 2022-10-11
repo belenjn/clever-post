@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { Content } from "./components/Content";
 import { Login } from "./components/Login";
@@ -7,9 +7,10 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import "./styles/App.scss";
 
 function App() {
+  
   const [authenticated, setAuthenticated] = useState<boolean>(false);
 
-  return (
+    return (
     <div className="App">
       <BrowserRouter>
         <Routes>

@@ -1,15 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchGetPosts } from "./thunks/fetchGetPosts";
 
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
 interface StateOfPosts {
-  posts: [];
+  posts: Array<Post>;
   status: "" | "loading" | "success" | "failed";
 }
 
-const initialState = {
+const initialState: StateOfPosts = {
   posts: [],
   status: "",
-} as StateOfPosts;
+};
 
 export const postsSlice = createSlice({
   name: "posts",
@@ -24,8 +31,8 @@ export const postsSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchGetPosts.fulfilled, (state, action) => {
-        state.status = "success";
         //TODO: arreglar error con el action.payload
+        state.status = "success";
         // state.posts = action.payload
       })
       .addCase(fetchGetPosts.rejected, (state) => {

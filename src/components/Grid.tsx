@@ -3,9 +3,6 @@ import { GridCard } from "./GridCard";
 
 export const Grid = () => {
 
-  //TODO: crear y configurar la store
-
-
   // useEffect(() => {
   //   dispatch(fetchGetImages(img));
   // }, [dispatch, img]);

@@ -1,8 +1,12 @@
+import { Navigate, useNavigate } from "react-router-dom";
+
 export const Login = ({
   setAuthenticated,
 }: {
   setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const navigate = useNavigate();
+
   interface User {
     username: string;
     password: string;
@@ -15,7 +19,12 @@ export const Login = ({
 
   const handleClick = (): void => {
     setAuthenticated(true);
-    console.log("Login");
+
+    let date: Date = new Date();
+
+    localStorage.setItem("login", date.toLocaleString());
+    
+    navigate("/");
   };
 
   return (
