@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchGetPosts } from "./thunks/fetchGetPosts";
 
 
@@ -32,8 +32,9 @@ export const postsSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchGetPosts.fulfilled, (state, action) => {
-        state.status = "success";
-        state.posts = action.payload
+        // state.status = "success";
+        // state.posts = action.payload
+        //TODO: arreglar error con el action.payload
       })
       .addCase(fetchGetPosts.rejected, (state) => {
         state.status = "failed";
