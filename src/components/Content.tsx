@@ -7,6 +7,8 @@ export const Content = () => {
     <>
       <Navbar />
       <Grid/>
+      <Footer />
+
     </>
   );
 };
