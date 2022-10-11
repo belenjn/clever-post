@@ -7,5 +7,9 @@ export const PrivateRoute = ({
   authenticated: boolean;
   children: JSX.Element;
 }) => {
-  return authenticated === true || localStorage.getItem("login") ? children : <Navigate to="/login" replace />;
+  return authenticated === true || localStorage.getItem("login") ? (
+    children
+  ) : (
+    <Navigate to="/login" replace />
+  );
 };

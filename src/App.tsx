@@ -7,10 +7,9 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import "./styles/App.scss";
 
 function App() {
-  
   const [authenticated, setAuthenticated] = useState<boolean>(false);
 
-    return (
+  return (
     <div className="App">
       <BrowserRouter>
         <Routes>
