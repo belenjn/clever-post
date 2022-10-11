@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store/store";
 import { fetchGetPosts } from "./thunks/fetchGetPosts";
 
 interface Post {
@@ -9,7 +10,7 @@ interface Post {
 }
 
 interface StateOfPosts {
-  posts: Array<Post>;
+  posts: Post[] | void;
   status: "" | "loading" | "success" | "failed";
 }
 
@@ -31,9 +32,8 @@ export const postsSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchGetPosts.fulfilled, (state, action) => {
-        //TODO: arreglar error con el action.payload
         state.status = "success";
-        // state.posts = action.payload
+        state.posts = action.payload;
       })
       .addCase(fetchGetPosts.rejected, (state) => {
         state.status = "failed";
@@ -42,5 +42,6 @@ export const postsSlice = createSlice({
 });
 
 export const { editPost, deletePost } = postsSlice.actions;
+export const posts = (state: RootState) => state.posts;
 
 export default postsSlice.reducer;

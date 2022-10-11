@@ -3,7 +3,7 @@ import postsSlice from "../features/postsSlice";
 
 export const store = configureStore({
   reducer: {
-    postsStore: postsSlice,
+    posts: postsSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),
