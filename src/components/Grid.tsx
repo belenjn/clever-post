@@ -6,8 +6,6 @@ import { Footer } from "./Footer";
 import { GridCard } from "./GridCard";
 
 export const Grid = () => {
-
-
   const dispatch = useAppDispatch;
   // const postList = useAppSelector(posts);
 

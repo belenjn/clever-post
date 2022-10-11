@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { Content } from "./components/Content";
 import { Login } from "./components/Login";
