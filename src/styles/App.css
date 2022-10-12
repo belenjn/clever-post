@@ -417,6 +417,11 @@ body {
   font-size: 12px;
   text-align: justify;
   padding: 20px;
+  text-transform: lowercase;
+}
+
+.grid__card p:first-letter {
+  text-transform: uppercase;
 }
 
 .grid__card .grid__card--icons-container {
