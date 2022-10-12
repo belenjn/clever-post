@@ -3,7 +3,7 @@ import { Post } from "../features/postsSlice";
 import { Modal } from "./Modal";
 
 export const GridCard = ({ post }: { post: Post }) => {
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   const idPhoto: number = post.id;
 
@@ -13,12 +13,8 @@ export const GridCard = ({ post }: { post: Post }) => {
 
   return (
     <>
-      {openModal === true ? (
-      <Modal post={post} idPhoto={idPhoto} setOpenModal={setOpenModal}/>
-      ) : (
-        ""
-      )}
       <div className="grid__card">
+      {openModal === true ? <Modal post={post} idPhoto={idPhoto} setOpenModal={setOpenModal}/> : ''}
         <div className="grid__card--title-image">
           <h3>{post.title}</h3>
           <img

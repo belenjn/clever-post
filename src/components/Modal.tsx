@@ -1,4 +1,8 @@
-import { Post } from "../features/postsSlice";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { editPost, Post } from "../features/postsSlice";
+import { useAppDispatch } from "../hooks/redux-hooks";
+
+//TODO: Añadir animaciones, notificación de que se ha guardado y arreglar el problema de estilos desde scss
 
 export const Modal = ({
   post,
@@ -9,8 +13,19 @@ export const Modal = ({
   idPhoto: number;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const handleClose = (): void => {
+  const dispatch = useAppDispatch();
+
+  const [edit, setEdit] = useState<boolean>(false);
+  const [descriptionPost, setDescriptionPost] = useState<string>("");
+
+  const handleClickSaveDescription = (id: number) => {
+    dispatch(editPost({ id, descriptionPost }));
+    setEdit(false);
     setOpenModal(false);
+  };
+
+  const handleChangeOfDescription = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setDescriptionPost(e.currentTarget.value);
   };
 
   return (
@@ -61,17 +76,19 @@ export const Modal = ({
         >
           {post.title}
         </h3>
-        <p
+        <textarea
           style={{
             fontWeight: 100,
             alignSelf: "center",
             textAlign: "justify",
             lineHeight: 2,
             marginTop: 30,
+            height: 100,
+            width: 400,
           }}
-        >
-          {post.body}
-        </p>
+          value={descriptionPost}
+          onChange={(e) => handleChangeOfDescription(e)}
+        />
 
         <button
           style={{
@@ -87,7 +104,7 @@ export const Modal = ({
             width: 300,
             height: 60,
           }}
-          onClick={handleClose}
+          onClick={() => handleClickSaveDescription(post.id)}
         >
           Save
         </button>
