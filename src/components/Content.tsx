@@ -7,6 +7,7 @@ export const Content = ({
 }: {
   setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  
   return (
     <>
       <Navbar setAuthenticated={setAuthenticated} />

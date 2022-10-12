@@ -3,5 +3,5 @@ import axios from "axios";
 export const postsAPI = async () => {
   return await axios
     .get("https://jsonplaceholder.typicode.com/posts")
-    .then((res) => console.log(res.data));
+    .then((res) => res.data);
 };

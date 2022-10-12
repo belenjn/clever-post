@@ -10,7 +10,7 @@ interface Post {
 }
 
 interface StateOfPosts {
-  posts: Post[] | void;
+  posts: Post[];
   status: "" | "loading" | "success" | "failed";
 }
 
@@ -42,6 +42,6 @@ export const postsSlice = createSlice({
 });
 
 export const { editPost, deletePost } = postsSlice.actions;
-export const posts = (state: RootState) => state.posts;
+export const posts = (state: RootState) => state.posts.posts;
 
 export default postsSlice.reducer;
