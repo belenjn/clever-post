@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { Sidebar } from "./Sidebar";
 
-export const Navbar = ({setAuthenticated} : {setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>}) => {
+export const Navbar = ({
+  setAuthenticated,
+}: {
+  setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleClickHamburger = ():void => {
+  const handleClickHamburger = (): void => {
     setIsOpen(true);
   };
 
-  const handleClickCross = ():void => {
+  const handleClickCross = (): void => {
     setIsOpen(false);
   };
 
@@ -32,7 +36,7 @@ export const Navbar = ({setAuthenticated} : {setAuthenticated: React.Dispatch<Re
           onClick={handleClickCross}
         />
       </div>
-      {isOpen === true ? <Sidebar setAuthenticated={setAuthenticated}/> : ""}
+      {isOpen === true ? <Sidebar setAuthenticated={setAuthenticated} /> : ""}
     </>
   );
 };
