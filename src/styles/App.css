@@ -391,8 +391,9 @@ body {
 }
 
 .grid__card .grid__card--title-image h3 {
+  font-size: 22px;
   text-align: left;
-  width: 70%;
+  width: 60%;
   font-size: 15px;
   text-transform: lowercase;
 }
@@ -402,19 +403,15 @@ body {
 }
 
 .grid__card .grid__card--title-image .grid__card--image {
-  background-image: url("../assets/userImage.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   border-radius: 500px;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 
 .grid__card p {
   font-weight: 100;
-  line-height: 17px;
-  font-size: 12px;
+  line-height: 18px;
+  font-size: 14px;
   text-align: justify;
   padding: 20px;
   text-transform: lowercase;
@@ -709,6 +706,7 @@ body {
     height: 100%;
   }
   .grid__card {
+    padding: 15px;
     height: 400px;
     width: 400px;
   }
@@ -729,12 +727,12 @@ body {
             justify-content: space-between;
   }
   .grid__card .grid__card--title-image .grid__card--image {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
   }
   .grid__card p {
     line-height: 25px;
-    font-size: 14px;
+    font-size: 15px;
   }
   .grid__card .grid__card--icons-container {
     display: -webkit-box;
