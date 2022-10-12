@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { editPost, Post } from "../features/postsSlice";
 import { useAppDispatch } from "../hooks/redux-hooks";
+import Swal from 'sweetalert2';
 
 //TODO: Añadir animaciones, notificación de que se ha guardado y arreglar el problema de estilos desde scss
 
@@ -22,6 +23,12 @@ export const Modal = ({
     dispatch(editPost({ id, descriptionPost }));
     setEdit(false);
     setOpenModal(false);
+
+    Swal.fire(
+        'Good job!',
+        'Saved changes!',
+        'success'
+      )
   };
 
   const handleChangeOfDescription = (e: ChangeEvent<HTMLTextAreaElement>) => {

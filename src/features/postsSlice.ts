@@ -20,11 +20,11 @@ interface StateOfPosts {
 let ejemplo;
 
 const setLocalStorageFunc = (value: any) => {
-  localStorage.setItem("image", JSON.stringify(value));
+  localStorage.setItem("Post", JSON.stringify(value));
 };
 
 const getLocalStorageFunc = () => {
-  const getPostsFromLocal = localStorage.getItem("Post edited");
+  const getPostsFromLocal = localStorage.getItem("Post");
   console.log(getPostsFromLocal);
   return getPostsFromLocal
     ? ((ejemplo = JSON.stringify(getPostsFromLocal)), JSON.parse(ejemplo))

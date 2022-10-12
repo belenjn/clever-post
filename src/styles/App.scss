@@ -57,6 +57,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: map-get($colors, "secondary");
+  height: 100vh;
 
   .login__title {
     align-self: center;
