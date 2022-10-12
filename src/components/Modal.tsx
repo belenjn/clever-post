@@ -4,6 +4,7 @@ import { useAppDispatch } from "../hooks/redux-hooks";
 import Swal from 'sweetalert2';
 
 //TODO: Añadir animaciones, notificación de que se ha guardado y arreglar el problema de estilos desde scss
+//TODO: Hacer el responsive del modal una vez estén arreglados los estilos desde scss
 
 export const Modal = ({
   post,
