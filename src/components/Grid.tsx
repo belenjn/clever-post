@@ -5,20 +5,24 @@ import { GridCard } from "./GridCard";
 
 export const Grid = () => {
 
-  const dispatch = useAppDispatch;
+  const dispatch = useAppDispatch();
 
   const postsList = useAppSelector((state) => state.posts.posts);
 
    useEffect(() => {
      dispatch(fetchGetPosts());
-   }, [dispatch]);
+   }, []);
 
 
   return (
     <>
       <div className="grid">
         <div className="grid__container">
-          <GridCard />
+         {
+          postsList.map(post => (
+            <GridCard post={post} key={post.id}/>
+          ))
+         }
         </div>
       </div>
     </>

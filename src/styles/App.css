@@ -394,6 +394,11 @@ body {
   text-align: left;
   width: 70%;
   font-size: 15px;
+  text-transform: lowercase;
+}
+
+.grid__card .grid__card--title-image h3:first-letter {
+  text-transform: uppercase;
 }
 
 .grid__card .grid__card--title-image .grid__card--image {

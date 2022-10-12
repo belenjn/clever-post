@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 import { fetchGetPosts } from "./thunks/fetchGetPosts";
 
-interface Post {
+export interface Post {
   userId: number;
   id: number;
   title: string;
@@ -23,8 +23,23 @@ export const postsSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    editPost: (state, action) => {},
-    deletePost: (state, action) => {},
+    editPost: (state, action) => {
+      const statePost = [...state.posts];
+      const editIndex = statePost.findIndex(
+        (post) => post.id === action.payload.id
+      );
+
+      const newPost = {
+        ...statePost[editIndex],
+        body: action.payload.body,
+      };
+      statePost[editIndex] = newPost;
+      state.posts = statePost;
+    },
+    deletePost: (state, action) => {
+      state.posts = state.posts.filter((post) => post.id !== action.payload.id);
+      localStorage.setItem("Id from deleted post: ", action.payload.id)
+    },
   },
   extraReducers: (builder) => {
     builder
