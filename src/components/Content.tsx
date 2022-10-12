@@ -2,10 +2,10 @@ import { Footer } from "./Footer";
 import { Grid } from "./Grid";
 import { Navbar } from "./Navbar";
 
-export const Content = () => {
+export const Content = ({setAuthenticated} : {setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>}) => {
   return (
     <>
-      <Navbar />
+      <Navbar setAuthenticated={setAuthenticated}/>
       <Grid/>
       <Footer />
 

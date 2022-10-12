@@ -21,7 +21,7 @@ function App() {
             path="/"
             element={
               <PrivateRoute authenticated={authenticated}>
-                <Content />
+                <Content setAuthenticated={setAuthenticated}/>
               </PrivateRoute>
             }
           />

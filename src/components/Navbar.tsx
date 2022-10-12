@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sidebar } from "./Sidebar";
 
-export const Navbar = () => {
+export const Navbar = ({setAuthenticated} : {setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleClickHamburger = ():void => {
@@ -32,7 +32,7 @@ export const Navbar = () => {
           onClick={handleClickCross}
         />
       </div>
-      {isOpen === true ? <Sidebar /> : ""}
+      {isOpen === true ? <Sidebar setAuthenticated={setAuthenticated}/> : ""}
     </>
   );
 };
