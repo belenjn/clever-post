@@ -1,8 +1,9 @@
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 import { Dispatch, useEffect } from "react";
-import { Post, StateOfPosts } from "../features/postsSlice";
+import { StateOfPosts } from "../features/postsSlice";
 import { fetchGetPosts } from "../features/thunks/fetchGetPosts";
 import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
+import { Post } from "../types/posts";
 import { GridCard } from "./GridCard";
 
 export const Grid = () => {
