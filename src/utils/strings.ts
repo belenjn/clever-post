@@ -1,4 +1,5 @@
-export const strings: {} = {
+export const strings = {
+    navbarTitle: "CLEVER-POST",
 
 }
 

@@ -24,7 +24,7 @@ export interface StateOfPosts {
 
 //TODO: Arreglar guardado del local en editedPosts y recorrer editedPosts si los hay para que muestre los cambios.
 
-const setLocalStorageFunc = (value: {}) => {
+const setLocalStorageFunc = (value: {}): void => {
   let values: string = localStorage.getItem("Post") ?? "";
   let listValue = [];
   if (values == "") {
@@ -57,7 +57,7 @@ export const postsSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    editPost: (state, action) => {
+    editPost: (state, action): void => {
       const statePost = [...state.posts];
       const editIndex = statePost.findIndex(
         (post) => post.id === action.payload.id
@@ -72,22 +72,22 @@ export const postsSlice = createSlice({
       setLocalStorageFunc(newPost);
       state.posts = statePost;
     },
-    deletePost: (state, action) => {
+    deletePost: (state, action): void => {
       state.posts = state.posts.filter((post) => post.id !== action.payload.id);
       setLocalStorageFunc(state.posts);
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchGetPosts.pending, (state) => {
+      .addCase(fetchGetPosts.pending, (state): void => {
         state.status = "loading";
       })
-      .addCase(fetchGetPosts.fulfilled, (state, action) => {
+      .addCase(fetchGetPosts.fulfilled, (state, action): void => {
         state.status = "success";
 
         const editedPosts: Post[] = getLocalStorageFunc();
 
-        action.payload = action.payload.map((post: Post) => {
+        action.payload = action.payload.map((post: Post): Post => {
           var item2 = editedPosts.find(function (item2: Post) {
             return item2.id == post.id;
           });
@@ -96,7 +96,7 @@ export const postsSlice = createSlice({
 
         state.posts = action.payload;
       })
-      .addCase(fetchGetPosts.rejected, (state) => {
+      .addCase(fetchGetPosts.rejected, (state): void => {
         state.status = "failed";
       });
   },

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { strings } from "../utils/strings";
 import { Sidebar } from "./Sidebar";
 
 export const Navbar = ({
@@ -21,7 +22,7 @@ export const Navbar = ({
     <>
       <div className="navbar">
         <div className="navbar__icon--container">
-          <h1>CLEVER-POST</h1>
+          <h1>{strings.navbarTitle}</h1>
           <div className="navbar__image" />
         </div>
         <div
