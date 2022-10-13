@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Post } from "../features/postsSlice";
+import { deletePost, Post } from "../features/postsSlice";
+import { useAppDispatch } from "../hooks/redux-hooks";
 import { Modal } from "./Modal";
 
 export const GridCard = ({ post }: { post: Post }) => {
   const [openModal, setOpenModal] = useState<boolean>(false);
+
+  const dispatch = useAppDispatch();
 
   const idPhoto: number = post.id;
 
@@ -14,7 +17,11 @@ export const GridCard = ({ post }: { post: Post }) => {
   return (
     <>
       <div className="grid__card">
-      {openModal === true ? <Modal post={post} idPhoto={idPhoto} setOpenModal={setOpenModal}/> : ''}
+        {openModal === true ? (
+          <Modal post={post} idPhoto={idPhoto} setOpenModal={setOpenModal} />
+        ) : (
+          ""
+        )}
         <div className="grid__card--title-image">
           <h3>{post.title}</h3>
           <img
@@ -30,7 +37,10 @@ export const GridCard = ({ post }: { post: Post }) => {
             className="grid__card--icons-container-edit"
             onClick={handleClickEdit}
           />
-          <div className="grid__card--icons-container-delete" />
+          <div
+            className="grid__card--icons-container-delete"
+            onClick={() => dispatch(deletePost(post))}
+          />
         </div>
       </div>
     </>

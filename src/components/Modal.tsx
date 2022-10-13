@@ -27,7 +27,7 @@ export const Modal = ({
 
     Swal.fire(
         'Good job!',
-        'Saved changes!',
+        'Your changes have been saved successfully',
         'success'
       )
   };

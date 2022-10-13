@@ -11,13 +11,12 @@ export interface Post {
 
 interface StateOfPosts {
   posts: Post[];
-  editedPosts: Post[] | null;
+  editedPosts: Post[];
   status: "" | "loading" | "success" | "failed";
 }
 
 //TODO: Arreglar guardado del local en editedPosts y recorrer editedPosts si los hay para que muestre los cambios.
 
-let ejemplo;
 
 const setLocalStorageFunc = (value: any) => {
   localStorage.setItem("Post", JSON.stringify(value));
@@ -25,9 +24,8 @@ const setLocalStorageFunc = (value: any) => {
 
 const getLocalStorageFunc = () => {
   const getPostsFromLocal = localStorage.getItem("Post");
-  console.log(getPostsFromLocal);
   return getPostsFromLocal
-    ? ((ejemplo = JSON.stringify(getPostsFromLocal)), JSON.parse(ejemplo))
+    ?  JSON.parse(getPostsFromLocal)
     : [];
 };
 
@@ -51,13 +49,14 @@ export const postsSlice = createSlice({
         ...statePost[editIndex],
         body: action.payload.descriptionPost,
       };
+      
       statePost[editIndex] = newPost;
-      state.posts = statePost;
-      setLocalStorageFunc(state.posts)
+      state.editedPosts = statePost;
+      setLocalStorageFunc(state.editedPosts)
     },
     deletePost: (state, action) => {
-      state.posts = state.posts.filter((post) => post.id !== action.payload.id);
-      setLocalStorageFunc(state.posts)
+      state.editedPosts = state.editedPosts.filter((post) => post.id !== action.payload.id);
+      setLocalStorageFunc(state.editedPosts);
     },
   },
   extraReducers: (builder) => {
