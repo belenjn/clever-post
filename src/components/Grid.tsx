@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
 import { GridCard } from "./GridCard";
 
 export const Grid = () => {
+  
   const dispatch: ThunkDispatch<{ posts: StateOfPosts }, undefined, AnyAction> &
     Dispatch<AnyAction> = useAppDispatch();
 
@@ -19,9 +20,11 @@ export const Grid = () => {
     <>
       <div className="grid">
         <div className="grid__container">
-          {postsList.map((post) => (
-            <GridCard post={post} key={post.id} />
-          ))}
+          {postsList.map(
+            (post: Post): JSX.Element => (
+              <GridCard post={post} key={post.id} />
+            )
+          )}
         </div>
       </div>
     </>
