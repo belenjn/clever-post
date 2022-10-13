@@ -557,6 +557,12 @@ body {
   color: #ffffff;
 }
 
+.swal2-icon,
+.swal2-success,
+.swal2-icon-show {
+  overflow-y: hidden;
+}
+
 @media only screen and (min-width: 810px) {
   .login .login__data--container {
     width: 500px;
@@ -773,11 +779,6 @@ body {
   }
   .notFound {
     margin-top: 100px;
-  }
-  .swal2-icon,
-  .swal2-success,
-  .swal2-icon-show {
-    overflow-y: hidden;
   }
 }
 /*# sourceMappingURL=App.css.map */

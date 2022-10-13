@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
-  getLocalStorageFunc,
-  setLocalStorageFunc,
+  getPostLocalStorage, setPostLocalStorage,
 } from "../services/localStorage";
 import { RootState } from "../store/store";
 import { Post } from "../types/posts";
@@ -15,7 +14,7 @@ interface StateOfPosts {
 
 const initialState: StateOfPosts = {
   posts: [],
-  editedPosts: getLocalStorageFunc(),
+  editedPosts: getPostLocalStorage(),
   status: "",
 };
 
@@ -35,12 +34,12 @@ export const postsSlice = createSlice({
       };
 
       statePost[editIndex] = newPost;
-      setLocalStorageFunc(newPost);
+      setPostLocalStorage(newPost);
       state.posts = statePost;
     },
     deletePost: (state, action): void => {
       state.posts = state.posts.filter((post) => post.id !== action.payload.id);
-      setLocalStorageFunc(state.posts);
+      setPostLocalStorage(state.posts);
     },
   },
   extraReducers: (builder) => {
@@ -51,7 +50,7 @@ export const postsSlice = createSlice({
       .addCase(fetchGetPosts.fulfilled, (state, action): void => {
         state.status = "success";
 
-        const editedPosts: Post[] = getLocalStorageFunc();
+        const editedPosts: Post[] = getPostLocalStorage();
 
         action.payload = action.payload.map((post: Post): Post => {
           var item2 = editedPosts.find(function (item2: Post) {
