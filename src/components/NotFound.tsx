@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { strings } from "../utils/strings";
 
 export const NotFound = () => {
   return (
     <div className="notFound">
-      <h1>Oops!</h1>
-      <p>The page you were looking for does not exist</p>
+      <h1>{strings.notFoundFirstTitle}</h1>
+      <p>{strings.notFoundSecondTitle}</p>
       <div className="notFound__image" />
       <button className="notFound__button">
-        <Link to="/">Go home</Link>
+        <Link to="/">{strings.notFoundButton}</Link>
       </button>
     </div>
   );

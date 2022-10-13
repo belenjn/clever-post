@@ -22,8 +22,6 @@ export interface StateOfPosts {
   status: "" | "loading" | "success" | "failed";
 }
 
-//TODO: Arreglar guardado del local en editedPosts y recorrer editedPosts si los hay para que muestre los cambios.
-
 const setLocalStorageFunc = (value: {}): void => {
   let values: string = localStorage.getItem("Post") ?? "";
   let listValue = [];

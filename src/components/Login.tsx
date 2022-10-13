@@ -1,4 +1,5 @@
 import { Navigate, NavigateFunction, useNavigate } from "react-router-dom";
+import { strings } from "../utils/strings";
 
 export const Login = ({
   setAuthenticated,
@@ -29,15 +30,13 @@ export const Login = ({
 
   return (
     <div className="login">
-      <h1 className="login__title">WELCOME TO CLEVER-POST</h1>
-      <h3 className="login__secondTitle">
-        Log in and share your day with the rest of the world.
-      </h3>
+      <h1 className="login__title">{strings.loginTitle}</h1>
+      <h3 className="login__secondTitle">{strings.loginSecondTitle}</h3>
 
       <div className="login__data--container">
         <div className="login__data--logo" />
 
-        <h4 className="login__data--title">Username:</h4>
+        <h4 className="login__data--title">{strings.loginUsername}</h4>
         <input
           required
           type="text"
@@ -45,7 +44,7 @@ export const Login = ({
           className="login__data--input"
         />
 
-        <h4 className="login__data--title">Password:</h4>
+        <h4 className="login__data--title">{strings.loginPassword}</h4>
         <input
           required
           type="password"
@@ -54,7 +53,7 @@ export const Login = ({
         />
 
         <button className="login__data--button" onClick={handleClick}>
-          Log In
+          {strings.loginButton}
         </button>
       </div>
     </div>

@@ -22,7 +22,7 @@ export const Navbar = ({
     <>
       <div className="navbar">
         <div className="navbar__icon--container">
-          <h1>{strings.navbarTitle}</h1>
+          <h1>{strings.navbar}</h1>
           <div className="navbar__image" />
         </div>
         <div

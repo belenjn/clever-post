@@ -3,6 +3,7 @@ import { editPost, Post, StateOfPosts } from "../features/postsSlice";
 import { useAppDispatch } from "../hooks/redux-hooks";
 import Swal from "sweetalert2";
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
+import { strings } from "../utils/strings";
 
 //TODO: Añadir animaciones, notificación de que se ha guardado y arreglar el problema de estilos desde scss
 //TODO: Hacer el responsive del modal una vez estén arreglados los estilos desde scss
@@ -118,7 +119,7 @@ export const Modal = ({
           }}
           onClick={() => handleClickSaveDescription(post.id)}
         >
-          Save
+          {strings.modalButton}
         </button>
       </div>
     </div>

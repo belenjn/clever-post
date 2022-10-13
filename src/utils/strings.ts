@@ -1,6 +1,15 @@
 export const strings = {
-    navbarTitle: "CLEVER-POST",
-
-}
-
-//TODO: Rellenar strings
+  loginTitle: "WELCOME TO CLEVER-POST",
+  loginSecondTitle: "Log in and share your day with the rest of the world.",
+  loginUsername: "Username:",
+  loginPassword: "Password:",
+  loginButton: "Log In",
+  modalButton: "Save",
+  navbar: "CLEVER-POST",
+  footer: "© 2022 All Rights reserved",
+  sidebarUsername: "User Test Name",
+  sidebarButton: "Log Out",
+  notFoundFirstTitle: "Oops!",
+  notFoundSecondTitle: "The page you were looking for does not exist",
+  notFoundButton: "Go home",
+};
