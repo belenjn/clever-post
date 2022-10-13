@@ -416,6 +416,9 @@ body {
   text-align: justify;
   padding: 20px;
   text-transform: lowercase;
+  width: 300px;
+  height: 130px;
+  overflow-y: hidden;
 }
 
 .grid__card p:first-letter {
@@ -734,6 +737,15 @@ body {
   .grid__card p {
     line-height: 25px;
     font-size: 15px;
+    font-weight: 100;
+    line-height: 18px;
+    font-size: 14px;
+    text-align: justify;
+    padding: 20px;
+    text-transform: lowercase;
+    width: 375px;
+    height: 160px;
+    overflow-y: hidden;
   }
   .grid__card .grid__card--icons-container {
     display: -webkit-box;
@@ -762,8 +774,10 @@ body {
   .notFound {
     margin-top: 100px;
   }
-  .swal2-icon, .swal2-success, .swal2-icon-show {
-    overflow-y: none;
+  .swal2-icon,
+  .swal2-success,
+  .swal2-icon-show {
+    overflow-y: hidden;
   }
 }
 /*# sourceMappingURL=App.css.map */
