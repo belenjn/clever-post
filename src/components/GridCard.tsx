@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import { deletePost, Post } from "../features/postsSlice";
+import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
+import React, { Dispatch, useState } from "react";
+import { deletePost, Post, StateOfPosts } from "../features/postsSlice";
 import { useAppDispatch } from "../hooks/redux-hooks";
 import { Modal } from "./Modal";
 
 export const GridCard = ({ post }: { post: Post }) => {
+  
   const [openModal, setOpenModal] = useState<boolean>(false);
 
-  const dispatch = useAppDispatch();
+  const dispatch: ThunkDispatch<{ posts: StateOfPosts }, undefined, AnyAction> &
+    Dispatch<AnyAction> = useAppDispatch();
 
   const idPhoto: number = post.id;
 
@@ -39,7 +42,7 @@ export const GridCard = ({ post }: { post: Post }) => {
           />
           <div
             className="grid__card--icons-container-delete"
-            onClick={() => dispatch(deletePost(post))}
+            onClick={(): {} => dispatch(deletePost(post))}
           />
         </div>
       </div>

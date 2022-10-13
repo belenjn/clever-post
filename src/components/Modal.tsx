@@ -1,7 +1,8 @@
-import { ChangeEvent, FormEvent, useState } from "react";
-import { editPost, Post } from "../features/postsSlice";
+import { ChangeEvent, Dispatch, FormEvent, useState } from "react";
+import { editPost, Post, StateOfPosts } from "../features/postsSlice";
 import { useAppDispatch } from "../hooks/redux-hooks";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 
 //TODO: Añadir animaciones, notificación de que se ha guardado y arreglar el problema de estilos desde scss
 //TODO: Hacer el responsive del modal una vez estén arreglados los estilos desde scss
@@ -15,24 +16,27 @@ export const Modal = ({
   idPhoto: number;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const dispatch = useAppDispatch();
+  const dispatch: ThunkDispatch<{ posts: StateOfPosts }, undefined, AnyAction> &
+    Dispatch<AnyAction> = useAppDispatch();
 
   const [edit, setEdit] = useState<boolean>(false);
   const [descriptionPost, setDescriptionPost] = useState<string>("");
 
-  const handleClickSaveDescription = (id: number) => {
+  const handleClickSaveDescription = (id: number): void => {
     dispatch(editPost({ id, descriptionPost }));
     setEdit(false);
     setOpenModal(false);
 
     Swal.fire(
-        'Good job!',
-        'Your changes have been saved successfully',
-        'success'
-      )
+      "Good job!",
+      "Your changes have been saved successfully",
+      "success"
+    );
   };
 
-  const handleChangeOfDescription = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChangeOfDescription = (
+    e: ChangeEvent<HTMLTextAreaElement>
+  ): void => {
     setDescriptionPost(e.currentTarget.value);
   };
 

@@ -10,6 +10,7 @@
     "scss": "node-sass -watch scss -o css"
   },
   "dependencies": {
+    "@azure/static-web-apps-cli": "^1.0.3",
     "@reduxjs/toolkit": "^1.8.6",
     "@types/react-redux": "^7.1.24",
     "axios": "^1.1.2",

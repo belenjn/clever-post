@@ -2,14 +2,21 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
 import { fetchGetPosts } from "./thunks/fetchGetPosts";
 
-export interface Post {
+export class Post {
   userId: number;
   id: number;
   title: string;
   body: string;
+
+  constructor(userId: number, id: number, title: string, body: string) {
+    this.userId = userId;
+    this.id = id;
+    this.title = title;
+    this.body = body;
+  }
 }
 
-interface StateOfPosts {
+export interface StateOfPosts {
   posts: Post[];
   editedPosts: Post[];
   status: "" | "loading" | "success" | "failed";
@@ -17,16 +24,27 @@ interface StateOfPosts {
 
 //TODO: Arreglar guardado del local en editedPosts y recorrer editedPosts si los hay para que muestre los cambios.
 
+const setLocalStorageFunc = (value: {}) => {
+  let values: string = localStorage.getItem("Post") ?? "";
+  let listValue = [];
+  if (values == "") {
+    listValue = [value];
+    localStorage.setItem("Post", JSON.stringify(listValue));
+    return;
+  }
+  let newValue = JSON.parse(values);
 
-const setLocalStorageFunc = (value: any) => {
-  localStorage.setItem("Post", JSON.stringify(value));
+  newValue instanceof Array
+    ? (listValue = [...newValue, value])
+    : (listValue = [value]);
+
+  localStorage.setItem("Post", JSON.stringify(listValue));
 };
 
-const getLocalStorageFunc = () => {
+const getLocalStorageFunc = (): Post[] => {
   const getPostsFromLocal = localStorage.getItem("Post");
-  return getPostsFromLocal
-    ?  JSON.parse(getPostsFromLocal)
-    : [];
+  console.log(getPostsFromLocal);
+  return getPostsFromLocal ? <Post[]>JSON.parse(getPostsFromLocal) : [];
 };
 
 const initialState: StateOfPosts = {
@@ -49,14 +67,14 @@ export const postsSlice = createSlice({
         ...statePost[editIndex],
         body: action.payload.descriptionPost,
       };
-      
+
       statePost[editIndex] = newPost;
-      state.editedPosts = statePost;
-      setLocalStorageFunc(state.editedPosts)
+      setLocalStorageFunc(newPost);
+      state.posts = statePost;
     },
     deletePost: (state, action) => {
-      state.editedPosts = state.editedPosts.filter((post) => post.id !== action.payload.id);
-      setLocalStorageFunc(state.editedPosts);
+      state.posts = state.posts.filter((post) => post.id !== action.payload.id);
+      setLocalStorageFunc(state.posts);
     },
   },
   extraReducers: (builder) => {
@@ -66,6 +84,16 @@ export const postsSlice = createSlice({
       })
       .addCase(fetchGetPosts.fulfilled, (state, action) => {
         state.status = "success";
+
+        const editedPosts: Post[] = getLocalStorageFunc();
+
+        action.payload = action.payload.map((post: Post) => {
+          var item2 = editedPosts.find(function (item2: Post) {
+            return item2.id == post.id;
+          });
+          return item2 ? item2 : post;
+        });
+
         state.posts = action.payload;
       })
       .addCase(fetchGetPosts.rejected, (state) => {

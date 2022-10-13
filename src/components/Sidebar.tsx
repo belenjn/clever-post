@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 export const Sidebar = ({
   setAuthenticated,
 }: {
   setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   const handleClickLogOut = (): void => {
     setAuthenticated(false);

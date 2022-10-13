@@ -762,5 +762,8 @@ body {
   .notFound {
     margin-top: 100px;
   }
+  .swal2-icon, .swal2-success, .swal2-icon-show {
+    overflow-y: none;
+  }
 }
 /*# sourceMappingURL=App.css.map */

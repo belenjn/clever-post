@@ -6,6 +6,7 @@ export const Navbar = ({
 }: {
   setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleClickHamburger = (): void => {

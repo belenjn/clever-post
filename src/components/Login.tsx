@@ -1,11 +1,11 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, NavigateFunction, useNavigate } from "react-router-dom";
 
 export const Login = ({
   setAuthenticated,
 }: {
   setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   interface User {
     username: string;
@@ -23,7 +23,7 @@ export const Login = ({
     let date: Date = new Date();
 
     localStorage.setItem("login", date.toLocaleString());
-    
+
     navigate("/");
   };
 
