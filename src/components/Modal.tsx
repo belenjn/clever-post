@@ -1,12 +1,12 @@
 import { ChangeEvent, Dispatch, FormEvent, useState } from "react";
-import { Post, StateOfPosts } from "../types/posts";
+import { Post } from "../types/posts";
 import { useAppDispatch } from "../hooks/redux-hooks";
 import Swal from "sweetalert2";
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 import { strings } from "../utils/strings";
-import { editPost } from "../features/postsSlice";
+import { editPost, StateOfPosts } from "../features/postsSlice";
 
-//TODO: Añadir animaciones, notificación de que se ha guardado y arreglar el problema de estilos desde scss
+//TODO: Añadir animaciones y arreglar el problema de estilos desde scss
 //TODO: Hacer el responsive del modal una vez estén arreglados los estilos desde scss
 
 export const Modal = ({
@@ -99,7 +99,10 @@ export const Modal = ({
             marginTop: 30,
             height: 100,
             width: 400,
+            padding: 10
           }}
+          placeholder="Max 200 characters"
+          maxLength={200}
           value={descriptionPost}
           onChange={(e) => handleChangeOfDescription(e)}
         />

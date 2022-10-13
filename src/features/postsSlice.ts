@@ -1,21 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
-  getPostLocalStorage, setPostLocalStorage,
+  getPostLocalStorage,
+  setPostLocalStorage,
 } from "../services/localStorage";
 import { RootState } from "../store/store";
 import { Post } from "../types/posts";
 import { fetchGetPosts } from "./thunks/fetchGetPosts";
 
-interface StateOfPosts {
+enum Status {
+  empty,
+  loading,
+  success,
+  failed,
+}
+
+export interface StateOfPosts {
   posts: Post[];
   editedPosts: Post[];
-  status: "" | "loading" | "success" | "failed";
+  status: Status;
 }
 
 const initialState: StateOfPosts = {
   posts: [],
   editedPosts: getPostLocalStorage(),
-  status: "",
+  status: Status.empty,
 };
 
 export const postsSlice = createSlice({
@@ -23,10 +31,13 @@ export const postsSlice = createSlice({
   initialState,
   reducers: {
     editPost: (state, action): void => {
-      const statePost = [...state.posts];
+      const statePost = state.posts;
       const editIndex = statePost.findIndex(
         (post) => post.id === action.payload.id
       );
+
+      // TODO: cuando editIndex es -1 gestionar el error.
+      if(editIndex === -1) return
 
       const newPost = {
         ...statePost[editIndex],
@@ -45,10 +56,10 @@ export const postsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchGetPosts.pending, (state): void => {
-        state.status = "loading";
+        state.status = Status.loading;
       })
       .addCase(fetchGetPosts.fulfilled, (state, action): void => {
-        state.status = "success";
+        state.status = Status.success;
 
         const editedPosts: Post[] = getPostLocalStorage();
 
@@ -62,7 +73,7 @@ export const postsSlice = createSlice({
         state.posts = action.payload;
       })
       .addCase(fetchGetPosts.rejected, (state): void => {
-        state.status = "failed";
+        state.status = Status.failed;
       });
   },
 });
