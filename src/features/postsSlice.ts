@@ -1,49 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {
+  getLocalStorageFunc,
+  setLocalStorageFunc,
+} from "../services/localStorage";
 import { RootState } from "../store/store";
+import { Post } from "../types/posts";
 import { fetchGetPosts } from "./thunks/fetchGetPosts";
 
-export class Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-
-  constructor(userId: number, id: number, title: string, body: string) {
-    this.userId = userId;
-    this.id = id;
-    this.title = title;
-    this.body = body;
-  }
-}
-
-export interface StateOfPosts {
+interface StateOfPosts {
   posts: Post[];
   editedPosts: Post[];
   status: "" | "loading" | "success" | "failed";
 }
-
-const setLocalStorageFunc = (value: {}): void => {
-  let values: string = localStorage.getItem("Post") ?? "";
-  let listValue = [];
-  if (values == "") {
-    listValue = [value];
-    localStorage.setItem("Post", JSON.stringify(listValue));
-    return;
-  }
-  let newValue = JSON.parse(values);
-
-  newValue instanceof Array
-    ? (listValue = [...newValue, value])
-    : (listValue = [value]);
-
-  localStorage.setItem("Post", JSON.stringify(listValue));
-};
-
-const getLocalStorageFunc = (): Post[] => {
-  const getPostsFromLocal = localStorage.getItem("Post");
-  console.log(getPostsFromLocal);
-  return getPostsFromLocal ? <Post[]>JSON.parse(getPostsFromLocal) : [];
-};
 
 const initialState: StateOfPosts = {
   posts: [],

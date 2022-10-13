@@ -1,4 +1,5 @@
-import { Navigate, NavigateFunction, useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
+import { user1 } from "../types/user";
 import { strings } from "../utils/strings";
 
 export const Login = ({
@@ -7,16 +8,6 @@ export const Login = ({
   setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const navigate: NavigateFunction = useNavigate();
-
-  interface User {
-    username: string;
-    password: string;
-  }
-
-  const user1: User = {
-    username: "user1",
-    password: "123456",
-  };
 
   const handleClick = (): void => {
     setAuthenticated(true);
