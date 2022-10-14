@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
-
 $colors: (
   "primary": #e51873,
   "secondary": #fde8f1,
@@ -224,7 +223,7 @@ body {
   position: absolute;
   right: 0;
   height: 500px;
-  width: 375px;
+  width: 100%;
   z-index: 2;
 
   .sidebar__userImage {
@@ -476,6 +475,71 @@ body {
   }
 }
 
+// Modal styles in mobile
+
+.modal__background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #9d9bad67;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+
+  .modal {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
+    width: 350px;
+
+    img {
+      align-self: center;
+      border-radius: map-get($borderRadius, "secondary");
+      height: 150px;
+      width: 150px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    textarea {
+      font-weight: 100;
+      align-self: center;
+      text-align: justify;
+      line-height: 2px;
+      margin-top: 30px;
+      padding: 10px;
+      height: 100px;
+      width: 300px;
+    }
+
+    button {
+      border: none;
+      border-radius: map-get($borderRadius, "primary");
+      background-color: map-get($colors, "green");
+      color: white;
+      font-weight: 100;
+      align-self: center;
+      text-align: center;
+      font-size: 25px;
+      margin-top: 30px;
+      width: 300px;
+      height: 60px;
+    }
+  }
+}
+
 .swal2-icon,
 .swal2-success,
 .swal2-icon-show {
@@ -627,7 +691,6 @@ body {
     display: flex;
     justify-content: center;
 
-
     .grid__container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -692,12 +755,13 @@ body {
     }
   }
 
-  // Page not found Styles in desktop view
+  // Page not found styles in desktop view
 
   .notFound {
     margin-top: 100px;
   }
 
+  // Modal styles in desktop view
 
   .modal__background {
     display: flex;
@@ -713,55 +777,18 @@ body {
     width: 100%;
 
     .modal {
-      background-color: "white";
-      border-radius: 8px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       height: 600px;
       width: 600px;
 
-      img {
-        align-self: center;
-        border-radius: map-get($borderRadius, "secondary");
-        height: 150px;
-        width: 150px;
-      }
-
-      h3 {
-        font-size: 22px;
-        margin-top: 30px;
-        text-align: center;
-      }
-
       textarea {
-        font-weight: 100;
-        align-self: center;
-        text-align: justify;
-        line-height: 2px;
-        margin-top: 30px;
-        padding: 10px;
-        height: 100px;
         width: 400px;
       }
 
       button {
-
-        border: none;
-        border-radius: map-get($borderRadius, "primary");
-        background-color: map-get($colors, "green");
-        color: white;
-        font-weight: 100;
-        align-self: center;
-        text-align: center;
-        font-size: 25px;
-        margin-top: 30px;
-        width: 300px;
-        height: 60px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
-
- 
 }

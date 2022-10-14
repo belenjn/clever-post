@@ -42,87 +42,18 @@ export const Modal = ({
   };
 
   return (
-    <div
-      className="modal__background"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        backgroundColor: "#9d9bad67",
-        alignItems: "center",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        zIndex: 999,
-        height: "100%",
-        width: "100%",
-      }}
-    >
-      <div
-        className="modal animate__animated animate__fadeIn animate__faster"
-        style={{
-          backgroundColor: "white",
-          borderRadius: 8,
-          padding: 30,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          height: 600,
-          width: 600,
-        }}
-      >
-        <img
-          style={{
-            alignSelf: "center",
-            borderRadius: 500,
-            height: 150,
-            width: 150,
-          }}
-          src={`https://i.pravatar.cc/150?u=${idPhoto}`}
-          alt="User icon"
-        />
-        <h3
-          style={{
-            fontSize: 22,
-            marginTop: 30,
-            textAlign: "center",
-          }}
-        >
-          {post.title}
-        </h3>
+    <div className="modal__background">
+      <div className="modal animate__animated animate__fadeIn animate__faster">
+        <img src={`https://i.pravatar.cc/150?u=${idPhoto}`} alt="User icon" />
+        <h3>{post.title}</h3>
         <textarea
-          style={{
-            fontWeight: 100,
-            alignSelf: "center",
-            textAlign: "justify",
-            lineHeight: 2,
-            marginTop: 30,
-            height: 100,
-            width: 400,
-            padding: 10,
-          }}
           placeholder="Max 200 characters"
           maxLength={200}
           value={descriptionPost}
           onChange={(e) => handleChangeOfDescription(e)}
         />
 
-        <button
-          style={{
-            border: "none",
-            borderRadius: 8,
-            backgroundColor: "#00b25c",
-            color: "white",
-            fontWeight: 100,
-            alignSelf: "center",
-            textAlign: "center",
-            fontSize: 25,
-            marginTop: 30,
-            width: 300,
-            height: 60,
-          }}
-          onClick={() => handleClickSaveDescription(post.id)}
-        >
+        <button onClick={() => handleClickSaveDescription(post.id)}>
           {strings.modalButton}
         </button>
       </div>
