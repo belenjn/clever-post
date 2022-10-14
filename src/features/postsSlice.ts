@@ -1,8 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
-  getPostLocalStorage,
-  setPostLocalStorage,
+  getDeletedPostLocalStorage,
+  getEditedPostLocalStorage,
+  setDeletedPostLocalStorage,
+  setEditedPostsLocalStorage,
 } from "../services/localStorage";
+
 import { RootState } from "../store/store";
 import { Post } from "../types/posts";
 import { fetchGetPosts } from "./thunks/fetchGetPosts";
@@ -17,12 +20,14 @@ enum Status {
 export interface StateOfPosts {
   posts: Post[];
   editedPosts: Post[];
+  deletedPosts: Post[];
   status: Status;
 }
 
 const initialState: StateOfPosts = {
   posts: [],
-  editedPosts: getPostLocalStorage(),
+  editedPosts: getEditedPostLocalStorage(),
+  deletedPosts: getDeletedPostLocalStorage(),
   status: Status.empty,
 };
 
@@ -37,7 +42,7 @@ export const postsSlice = createSlice({
       );
 
       // TODO: cuando editIndex es -1 gestionar el error.
-      if(editIndex === -1) return
+      if (editIndex === -1) return;
 
       const newPost = {
         ...statePost[editIndex],
@@ -45,12 +50,12 @@ export const postsSlice = createSlice({
       };
 
       statePost[editIndex] = newPost;
-      setPostLocalStorage(newPost);
+      setEditedPostsLocalStorage(newPost);
       state.posts = statePost;
     },
     deletePost: (state, action): void => {
       state.posts = state.posts.filter((post) => post.id !== action.payload.id);
-      setPostLocalStorage(state.posts);
+      setDeletedPostLocalStorage(action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -61,13 +66,21 @@ export const postsSlice = createSlice({
       .addCase(fetchGetPosts.fulfilled, (state, action): void => {
         state.status = Status.success;
 
-        const editedPosts: Post[] = getPostLocalStorage();
+        const editedPosts: Post[] = getEditedPostLocalStorage();
 
         action.payload = action.payload.map((post: Post): Post => {
-          var item2 = editedPosts.find(function (item2: Post) {
-            return item2.id == post.id;
+          let editedPost = editedPosts.find(function (editedPost: Post) {
+            return editedPost.id == post.id;
           });
-          return item2 ? item2 : post;
+          return editedPost ? editedPost : post;
+        });
+
+        const deletedPosts: Post[] = getDeletedPostLocalStorage();
+
+        deletedPosts.forEach((deletePost) => {
+          action.payload = action.payload.filter(
+            (post: Post) => post.id !== deletePost.id
+          );
         });
 
         state.posts = action.payload;
