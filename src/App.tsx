@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { Content } from "./components/Content";
 import { Login } from "./components/Login";
 import { NotFound } from "./components/NotFound";
-import { PrivateRoute } from "./components/PrivateRoute";
+import { PrivateRoute } from "./routes/PrivateRoute";
 import "./styles/App.scss";
 
 function App() {

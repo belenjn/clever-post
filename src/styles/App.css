@@ -242,7 +242,7 @@ body {
           flex-direction: column;
   position: absolute;
   right: 0;
-  height: 800px;
+  height: 500px;
   width: 375px;
   z-index: 2;
 }
@@ -255,14 +255,15 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-top: 50px;
-  width: 60px;
-  height: 60px;
+  margin-top: 40px;
+  width: 150px;
+  height: 150px;
 }
 
 .sidebar .sidebar__userName {
   text-align: center;
-  margin-top: 30px;
+  font-size: 25px;
+  margin-top: 40px;
   overflow-y: hidden;
 }
 
@@ -276,6 +277,7 @@ body {
   color: #ffffff;
   font-size: 20px;
   font-weight: 100;
+  margin-top: 100px;
   width: 300px;
   height: 60px;
 }
@@ -674,8 +676,8 @@ body {
     margin-bottom: 50px;
   }
   .sidebar {
-    height: 950px;
-    width: 500px;
+    height: 650px;
+    width: 400px;
   }
   .sidebar .sidebar__userImage {
     width: 150px;
@@ -690,6 +692,11 @@ body {
   }
   .sidebar .sidebar__latestPost--list {
     margin-bottom: 50px;
+  }
+  .sidebar .sidebar__logOutButton {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
   }
   .grid {
     background-color: #fde8f1;

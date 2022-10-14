@@ -225,7 +225,7 @@ body {
   flex-direction: column;
   position: absolute;
   right: 0;
-  height: 800px;
+  height: 500px;
   width: 375px;
   z-index: 2;
 
@@ -235,14 +235,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin-top: map-get($sizes, "marginTop");
-    width: 60px;
-    height: 60px;
+    margin-top: 40px;
+    width: 150px;
+    height: 150px;
   }
 
   .sidebar__userName {
     text-align: center;
-    margin-top: 30px;
+    font-size: 25px;
+    margin-top: 40px;
     overflow-y: hidden;
   }
 
@@ -254,6 +255,7 @@ body {
     color: map-get($colors, "white");
     font-size: map-get($fontSize, "secondary");
     font-weight: 100;
+    margin-top: 100px;
     width: map-get($sizes, "buttonWidth");
     height: map-get($sizes, "buttonHeight");
 
@@ -558,6 +560,8 @@ body {
     }
   }
 
+  // Login Styles in desktop view
+
   .login {
     height: 100vh;
 
@@ -590,9 +594,11 @@ body {
     }
   }
 
+  // Sidebar Styles in desktop view
+
   .sidebar {
-    height: 950px;
-    width: 500px;
+    height: 650px;
+    width: 400px;
 
     .sidebar__userImage {
       width: 150px;
@@ -611,7 +617,15 @@ body {
     .sidebar__latestPost--list {
       margin-bottom: map-get($sizes, "marginTop");
     }
+
+    .sidebar__logOutButton {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 40px;
+    }
   }
+
+  // Grid Styles in desktop view
 
   .grid {
     background-color: map-get($colors, "secondary");
@@ -681,6 +695,8 @@ body {
       }
     }
   }
+
+  // Page not found Styles in desktop view
 
   .notFound {
     margin-top: 100px;
