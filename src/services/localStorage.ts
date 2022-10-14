@@ -7,8 +7,8 @@ export const postDeletedListKey: string = "postsDeletedListKey";
 
 //Update
 
-export const setEditedPostsLocalStorage = (value: {}): void => {
-  let localPostsList = getEditedPostLocalStorage();
+export const setEditedPosts = (value: {}): void => {
+  let localPostsList = getEditedPosts();
 
   localStorage.setItem(
     postEditedListKey,
@@ -16,15 +16,15 @@ export const setEditedPostsLocalStorage = (value: {}): void => {
   );
 };
 
-export const getEditedPostLocalStorage = (): Post[] | [] => {
+export const getEditedPosts = (): Post[] | [] => {
   const getPostsFromLocal = localStorage.getItem(postEditedListKey);
   return getPostsFromLocal ? <Post[]>JSON.parse(getPostsFromLocal) : [];
 };
 
 //Delete
 
-export const setDeletedPostLocalStorage = (value: {}): void => {
-  let localPostsList = getDeletedPostLocalStorage();
+export const setDeletedPosts = (value: {}): void => {
+  let localPostsList = getDeletedPosts();
 
   localStorage.setItem(
     postDeletedListKey,
@@ -32,7 +32,7 @@ export const setDeletedPostLocalStorage = (value: {}): void => {
   );
 };
 
-export const getDeletedPostLocalStorage = (): Post[] | [] => {
+export const getDeletedPosts = (): Post[] | [] => {
   const getPostsFromLocal = localStorage.getItem(postDeletedListKey);
   return getPostsFromLocal ? <Post[]>JSON.parse(getPostsFromLocal) : [];
 };

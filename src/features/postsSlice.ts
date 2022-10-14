@@ -21,8 +21,8 @@ export interface StateOfPosts {
 
 const initialState: StateOfPosts = {
   posts: [],
-  editedPosts: localStorage.getEditedPostLocalStorage(),
-  deletedPosts: localStorage.getDeletedPostLocalStorage(),
+  editedPosts: localStorage.getEditedPosts(),
+  deletedPosts: localStorage.getDeletedPosts(),
   status: Status.empty,
 };
 
@@ -45,12 +45,12 @@ export const postsSlice = createSlice({
       };
 
       statePost[editIndex] = newPost;
-      localStorage.setEditedPostsLocalStorage(newPost);
+      localStorage.setEditedPosts(newPost);
       state.posts = statePost;
     },
     deletePost: (state, action): void => {
       state.posts = state.posts.filter((post) => post.id !== action.payload.id);
-      localStorage.setDeletedPostLocalStorage(action.payload);
+      localStorage.setDeletedPosts(action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -61,7 +61,7 @@ export const postsSlice = createSlice({
       .addCase(fetchGetPosts.fulfilled, (state, action): void => {
         state.status = Status.success;
 
-        const editedPosts: Post[] = localStorage.getEditedPostLocalStorage();
+        const editedPosts: Post[] = localStorage.getEditedPosts();
 
         action.payload = action.payload.map((post: Post): Post => {
           let editedPost = editedPosts.find(function (editedPost: Post) {
@@ -70,7 +70,7 @@ export const postsSlice = createSlice({
           return editedPost ? editedPost : post;
         });
 
-        const deletedPosts: Post[] = localStorage.getDeletedPostLocalStorage();
+        const deletedPosts: Post[] = localStorage.getDeletedPosts();
 
         deletedPosts.forEach((deletePost) => {
           action.payload = action.payload.filter(
