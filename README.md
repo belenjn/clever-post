@@ -35,5 +35,5 @@ And then:
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/75947904/195833405-ba9b56b7-ee50-4919-8d7d-92a1aa63b20f.png"/></p>
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/75947904/195833475-69e26b95-7955-47c0-8b5e-1b6b32147731.png"/></p>
+
 
