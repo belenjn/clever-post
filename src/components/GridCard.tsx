@@ -1,11 +1,12 @@
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 import React, { Dispatch, useState } from "react";
-import { deletePost, Post, StateOfPosts } from "../features/postsSlice";
+import Swal from "sweetalert2";
+import { deletePost, StateOfPosts } from "../features/postsSlice";
 import { useAppDispatch } from "../hooks/redux-hooks";
+import { Post } from "../types/posts";
 import { Modal } from "./Modal";
 
 export const GridCard = ({ post }: { post: Post }) => {
-  
   const [openModal, setOpenModal] = useState<boolean>(false);
 
   const dispatch: ThunkDispatch<{ posts: StateOfPosts }, undefined, AnyAction> &
@@ -42,7 +43,14 @@ export const GridCard = ({ post }: { post: Post }) => {
           />
           <div
             className="grid__card--icons-container-delete"
-            onClick={(): {} => dispatch(deletePost(post))}
+            onClick={(): {} => (
+              dispatch(deletePost(post)),
+              Swal.fire(
+                "Post deleted",
+                "Your changes have been saved successfully",
+                "success"
+              )
+            )}
           />
         </div>
       </div>
