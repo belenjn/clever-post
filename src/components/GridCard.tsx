@@ -1,5 +1,5 @@
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
-import  { Dispatch, useState } from "react";
+import { Dispatch, useState } from "react";
 import Swal from "sweetalert2";
 import { deletePost, StateOfPosts } from "../features/postsSlice";
 import { useAppDispatch } from "../hooks/redux-hooks";
@@ -19,12 +19,12 @@ export const GridCard = ({ post }: { post: Post }) => {
 
   return (
     <>
+      {openModal === true ? (
+        <Modal post={post} idPhoto={idPhoto} setOpenModal={setOpenModal} />
+      ) : (
+        ""
+      )}
       <div className="grid__card">
-        {openModal === true ? (
-          <Modal post={post} idPhoto={idPhoto} setOpenModal={setOpenModal} />
-        ) : (
-          ""
-        )}
         <div className="grid__card--title-image">
           <h3>{post.title}</h3>
           <img

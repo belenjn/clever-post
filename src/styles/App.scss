@@ -627,6 +627,7 @@ body {
     display: flex;
     justify-content: center;
 
+
     .grid__container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -697,67 +698,70 @@ body {
     margin-top: 100px;
   }
 
-  // .modal__background {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   background-color: #9d9bad67;
-  //   align-items: center;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   z-index: 999;
-  //   height: 100%;
-  //   width: 100%;
 
-  //   .modal {
-  //     background-color: "white";
-  //     border-radius: 8px;
-  //     padding: 30px;
-  //     display: flex;
-  //     flex-direction: column;
-  //     justify-content: center;
-  //     height: 600px;
-  //     width: 600px;
+  .modal__background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #9d9bad67;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
 
-  //     img {
-  //       align-self: center;
-  //       border-radius: map-get($borderRadius, "secondary");
-  //       height: 150px;
-  //       width: 150px;
-  //     }
+    .modal {
+      background-color: "white";
+      border-radius: 8px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 600px;
+      width: 600px;
 
-  //     h3 {
-  //       font-size: 22px;
-  //       margin-top: 30px;
-  //       text-align: center;
-  //     }
+      img {
+        align-self: center;
+        border-radius: map-get($borderRadius, "secondary");
+        height: 150px;
+        width: 150px;
+      }
 
-  //     textarea {
-  //       font-weight: 100;
-  //       align-self: center;
-  //       text-align: justify;
-  //       line-height: 2px;
-  //       margin-top: 30px;
-  //       padding: 10px;
-  //       height: 100px;
-  //       width: 400px;
-  //     }
+      h3 {
+        font-size: 22px;
+        margin-top: 30px;
+        text-align: center;
+      }
 
-  //     button {
+      textarea {
+        font-weight: 100;
+        align-self: center;
+        text-align: justify;
+        line-height: 2px;
+        margin-top: 30px;
+        padding: 10px;
+        height: 100px;
+        width: 400px;
+      }
 
-  //       border: none;
-  //       border-radius: map-get($borderRadius, "primary");
-  //       background-color: map-get($colors, "green");
-  //       color: white;
-  //       font-weight: 100;
-  //       align-self: center;
-  //       text-align: center;
-  //       font-size: 25px;
-  //       margin-top: 30px;
-  //       width: 300px;
-  //       height: 60px;
-  //     }
-  //   }
-  // }
+      button {
+
+        border: none;
+        border-radius: map-get($borderRadius, "primary");
+        background-color: map-get($colors, "green");
+        color: white;
+        font-weight: 100;
+        align-self: center;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 30px;
+        width: 300px;
+        height: 60px;
+      }
+    }
+  }
+
+ 
 }

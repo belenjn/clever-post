@@ -11,7 +11,7 @@ export const Content = ({
   return (
     <>
       <Navbar setAuthenticated={setAuthenticated} />
-      <Grid />
+      <Grid/>
       <Footer />
     </>
   );
