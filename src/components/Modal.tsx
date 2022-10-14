@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 import { Post } from "../types/posts";
 import { useAppDispatch } from "../hooks/redux-hooks";
 import Swal from "sweetalert2";
-import { strings } from "../utils/strings";
+import { STRINGS } from "../utils/strings";
 import { editPost } from "../features/postsSlice";
 
 export const Modal = ({
@@ -50,7 +50,7 @@ export const Modal = ({
         />
 
         <button onClick={() => handleClickSaveDescription(post.id)}>
-          {strings.modalButton}
+          {STRINGS.modalButton}
         </button>
       </div>
     </div>

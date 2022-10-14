@@ -1,5 +1,5 @@
 import { NavigateFunction, useNavigate } from "react-router-dom";
-import { strings } from "../utils/strings";
+import { STRINGS } from "../utils/strings";
 
 export const Sidebar = ({
   setAuthenticated,
@@ -17,9 +17,9 @@ export const Sidebar = ({
   return (
     <div className="sidebar">
       <div className="sidebar__userImage" />
-      <h3 className="sidebar__userName">{strings.sidebarUsername}</h3>
+      <h3 className="sidebar__userName">{STRINGS.sidebarUsername}</h3>
       <button className="sidebar__logOutButton" onClick={handleClickLogOut}>
-        {strings.sidebarButton}
+        {STRINGS.sidebarButton}
       </button>
     </div>
   );

@@ -1,4 +1,4 @@
-export const strings = {
+export const STRINGS = {
   loginTitle: "WELCOME TO CLEVER-POST",
   loginSecondTitle: "Log in and share your day with the rest of the world.",
   loginUsername: "Username:",

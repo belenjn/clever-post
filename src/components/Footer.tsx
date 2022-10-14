@@ -1,9 +1,9 @@
-import { strings } from "../utils/strings"
+import { STRINGS } from "../utils/strings"
 
 export const Footer = () => {
   return (
     <div className="footer">
-        <h3>{strings.footer}</h3>
+        <h3>{STRINGS.footer}</h3>
     </div>
   )
 }

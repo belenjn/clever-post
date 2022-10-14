@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import { strings } from "../utils/strings";
+import { STRINGS } from "../utils/strings";
 
 export const NotFound = () => {
   return (
     <div className="notFound">
-      <h1>{strings.notFoundFirstTitle}</h1>
-      <p>{strings.notFoundSecondTitle}</p>
+      <h1>{STRINGS.notFoundFirstTitle}</h1>
+      <p>{STRINGS.notFoundSecondTitle}</p>
       <div className="notFound__image" />
       <button className="notFound__button">
-        <Link to="/">{strings.notFoundButton}</Link>
+        <Link to="/">{STRINGS.notFoundButton}</Link>
       </button>
     </div>
   );

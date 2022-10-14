@@ -1,6 +1,6 @@
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { user1 } from "../types/user";
-import { strings } from "../utils/strings";
+import { STRINGS } from "../utils/strings";
 
 export const Login = ({
   setAuthenticated,
@@ -22,13 +22,13 @@ export const Login = ({
 
   return (
     <div className="login animate__animated animate__fadeIn animate__faster">
-      <h1 className="login__title">{strings.loginTitle}</h1>
-      <h3 className="login__secondTitle">{strings.loginSecondTitle}</h3>
+      <h1 className="login__title">{STRINGS.loginTitle}</h1>
+      <h3 className="login__secondTitle">{STRINGS.loginSecondTitle}</h3>
 
       <div className="login__data--container">
         <div className="login__data--logo" />
 
-        <h4 className="login__data--title">{strings.loginUsername}</h4>
+        <h4 className="login__data--title">{STRINGS.loginUsername}</h4>
         <input
           required
           type="text"
@@ -36,7 +36,7 @@ export const Login = ({
           className="login__data--input"
         />
 
-        <h4 className="login__data--title">{strings.loginPassword}</h4>
+        <h4 className="login__data--title">{STRINGS.loginPassword}</h4>
         <input
           required
           type="password"
@@ -45,7 +45,7 @@ export const Login = ({
         />
 
         <button className="login__data--button" onClick={handleClick}>
-          {strings.loginButton}
+          {STRINGS.loginButton}
         </button>
       </div>
     </div>
