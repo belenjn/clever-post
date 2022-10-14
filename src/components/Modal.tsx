@@ -60,7 +60,7 @@ export const Modal = ({
       }}
     >
       <div
-        className="animate__animated animate__fadeIn animate__faster"
+        className="modal animate__animated animate__fadeIn animate__faster"
         style={{
           backgroundColor: "white",
           borderRadius: 8,
