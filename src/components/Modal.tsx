@@ -6,9 +6,6 @@ import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 import { strings } from "../utils/strings";
 import { editPost, StateOfPosts } from "../features/postsSlice";
 
-//TODO: Arreglar el problema de estilos desde scss
-//TODO: Hacer el responsive del modal una vez estén arreglados los estilos desde scss
-
 export const Modal = ({
   post,
   idPhoto,
