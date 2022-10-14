@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, FormEvent, useState } from "react";
+import { ChangeEvent, Dispatch, useState } from "react";
 import { Post } from "../types/posts";
 import { useAppDispatch } from "../hooks/redux-hooks";
 import Swal from "sweetalert2";
@@ -18,8 +18,7 @@ export const Modal = ({
   idPhoto: number;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const dispatch: ThunkDispatch<{ posts: StateOfPosts }, undefined, AnyAction> &
-    Dispatch<AnyAction> = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   const [edit, setEdit] = useState<boolean>(false);
   const [descriptionPost, setDescriptionPost] = useState<string>("");

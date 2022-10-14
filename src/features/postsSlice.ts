@@ -1,10 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {
-  getDeletedPostLocalStorage,
-  getEditedPostLocalStorage,
-  setDeletedPostLocalStorage,
-  setEditedPostsLocalStorage,
-} from "../services/localStorage";
+import { createSlice } from "@reduxjs/toolkit";
+import * as localStorage from "../services/localStorage";
 
 import { RootState } from "../store/store";
 import { Post } from "../types/posts";
@@ -26,8 +21,8 @@ export interface StateOfPosts {
 
 const initialState: StateOfPosts = {
   posts: [],
-  editedPosts: getEditedPostLocalStorage(),
-  deletedPosts: getDeletedPostLocalStorage(),
+  editedPosts: localStorage.getEditedPostLocalStorage(),
+  deletedPosts: localStorage.getDeletedPostLocalStorage(),
   status: Status.empty,
 };
 
@@ -50,12 +45,12 @@ export const postsSlice = createSlice({
       };
 
       statePost[editIndex] = newPost;
-      setEditedPostsLocalStorage(newPost);
+      localStorage.setEditedPostsLocalStorage(newPost);
       state.posts = statePost;
     },
     deletePost: (state, action): void => {
       state.posts = state.posts.filter((post) => post.id !== action.payload.id);
-      setDeletedPostLocalStorage(action.payload);
+      localStorage.setDeletedPostLocalStorage(action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -66,7 +61,7 @@ export const postsSlice = createSlice({
       .addCase(fetchGetPosts.fulfilled, (state, action): void => {
         state.status = Status.success;
 
-        const editedPosts: Post[] = getEditedPostLocalStorage();
+        const editedPosts: Post[] = localStorage.getEditedPostLocalStorage();
 
         action.payload = action.payload.map((post: Post): Post => {
           let editedPost = editedPosts.find(function (editedPost: Post) {
@@ -75,7 +70,7 @@ export const postsSlice = createSlice({
           return editedPost ? editedPost : post;
         });
 
-        const deletedPosts: Post[] = getDeletedPostLocalStorage();
+        const deletedPosts: Post[] = localStorage.getDeletedPostLocalStorage();
 
         deletedPosts.forEach((deletePost) => {
           action.payload = action.payload.filter(

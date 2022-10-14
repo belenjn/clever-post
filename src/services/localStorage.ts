@@ -1,7 +1,9 @@
 import { Post } from "../types/posts";
 
-const postEditedListKey: string = "postsEditedListKey";
-const postDeletedListKey: string = "postsDeletedListKey";
+
+export const postEditedListKey: string = "postsEditedListKey";
+export const postDeletedListKey: string = "postsDeletedListKey";
+
 
 //Update
 

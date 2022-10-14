@@ -8,8 +8,7 @@ import { GridCard } from "./GridCard";
 
 export const Grid = () => {
   
-  const dispatch: ThunkDispatch<{ posts: StateOfPosts }, undefined, AnyAction> &
-    Dispatch<AnyAction> = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   const postsList: Post[] = useAppSelector((state) => state.posts.posts);
 

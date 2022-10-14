@@ -13,6 +13,7 @@ export const Login = ({
     setAuthenticated(true);
 
     let date: Date = new Date();
+    const loginKey: string = "LoginKey";
 
     localStorage.setItem("login", date.toLocaleString());
 
