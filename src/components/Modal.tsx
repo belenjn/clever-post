@@ -1,10 +1,9 @@
-import { ChangeEvent, Dispatch, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Post } from "../types/posts";
 import { useAppDispatch } from "../hooks/redux-hooks";
 import Swal from "sweetalert2";
-import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 import { strings } from "../utils/strings";
-import { editPost, StateOfPosts } from "../features/postsSlice";
+import { editPost } from "../features/postsSlice";
 
 export const Modal = ({
   post,

@@ -1,6 +1,4 @@
-import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
-import { Dispatch, useEffect } from "react";
-import { StateOfPosts } from "../features/postsSlice";
+import { useEffect } from "react";
 import { fetchGetPosts } from "../features/thunks/fetchGetPosts";
 import { useAppDispatch, useAppSelector } from "../hooks/redux-hooks";
 import { Post } from "../types/posts";

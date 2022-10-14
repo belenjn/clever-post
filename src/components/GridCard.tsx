@@ -1,7 +1,6 @@
-import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
-import { Dispatch, useState } from "react";
+import { useState } from "react";
 import Swal from "sweetalert2";
-import { deletePost, StateOfPosts } from "../features/postsSlice";
+import { deletePost } from "../features/postsSlice";
 import { useAppDispatch } from "../hooks/redux-hooks";
 import { Post } from "../types/posts";
 import { Modal } from "./Modal";
