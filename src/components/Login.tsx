@@ -20,7 +20,7 @@ export const Login = ({
   };
 
   return (
-    <div className="login">
+    <div className="login animate__animated animate__fadeIn animate__faster">
       <h1 className="login__title">{strings.loginTitle}</h1>
       <h3 className="login__secondTitle">{strings.loginSecondTitle}</h3>
 

@@ -60,6 +60,7 @@ export const Modal = ({
       }}
     >
       <div
+        className="animate__animated animate__fadeIn animate__faster"
         style={{
           backgroundColor: "white",
           borderRadius: 8,
@@ -99,7 +100,7 @@ export const Modal = ({
             marginTop: 30,
             height: 100,
             width: 400,
-            padding: 10
+            padding: 10,
           }}
           placeholder="Max 200 characters"
           maxLength={200}

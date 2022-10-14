@@ -19,7 +19,7 @@ export const Grid = () => {
 
   return (
     <>
-      <div className="grid">
+      <div className="grid animate__animated animate__fadeIn animate__faster">
         <div className="grid__container">
           {postsList.map(
             (post: Post): JSX.Element => (
