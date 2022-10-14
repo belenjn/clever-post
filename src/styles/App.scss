@@ -68,7 +68,8 @@ body {
     font-size: 35px;
     padding: 4px;
     margin-top: 60px;
-    height: 80px;
+    height: 100px;
+    overflow-y: hidden;
   }
 
   .login__secondTitle {
@@ -77,7 +78,8 @@ body {
     font-weight: 100;
     font-size: 20px;
     margin-top: 20px;
-    height: 50px;
+    overflow-y: hidden;
+    height: 70px;
     width: 70%;
   }
 
@@ -85,9 +87,9 @@ body {
     background-color: map-get($colors, "white");
     border-radius: map-get($borderRadius, "primary");
     display: flex;
-    margin-top: map-get($sizes, "marginTop");
-    margin-bottom: 80px;
     flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 30px;
     width: 90%;
     height: 600px;
 
@@ -97,20 +99,19 @@ body {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      margin-bottom: map-get($sizes, "marginTop");
-      margin-top: map-get($sizes, "marginTop");
-      width: 70px;
-      height: 70px;
+      width: 90px;
+      height: 90px;
     }
 
     .login__data--title {
       align-self: center;
       color: map-get($colors, "primary");
+      text-align: center;
       font-weight: 300;
       font-size: 20px;
-      margin-bottom: 10px;
-      height: 40px;
+      overflow-y: hidden;
       width: 300px;
+      height: 40px;
     }
 
     .login__data--input {
@@ -118,11 +119,10 @@ body {
       border: none;
       border-radius: map-get($borderRadius, "primary");
       background-color: map-get($colors, "greenInputLogIn");
-      margin-bottom: map-get($sizes, "marginTop");
       font-size: 20px;
       padding: 15px;
-      width: 300px;
-      height: 40px;
+      width: 250px;
+      height: 50px;
     }
 
     .login__data--button {
@@ -131,7 +131,6 @@ body {
       border: none;
       border-radius: map-get($borderRadius, "primary");
       color: map-get($colors, "white");
-      margin-top: map-get($sizes, "marginTop");
       font-size: map-get($fontSize, "secondary");
       font-weight: 100;
       width: 250px;
@@ -569,16 +568,13 @@ body {
       width: 600px;
 
       .login__data--logo {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
       }
 
       .login__data--title {
         text-align: center;
-        font-size: 25px;
+        font-size: 22px;
         width: 450px;
       }
 
