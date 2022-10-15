@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { user1 } from "../types/user";
 import { STRINGS } from "../utils/strings";
 
@@ -7,17 +9,24 @@ export const Login = ({
 }: {
   setAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   const navigate: NavigateFunction = useNavigate();
 
   const handleClick = (): void => {
-    setAuthenticated(true);
+    if (username === user1.username && password === user1.password) {
+      setAuthenticated(true);
 
-    let date: Date = new Date();
-    const loginKey: string = "LoginKey";
+      let date: Date = new Date();
 
-    localStorage.setItem("login", date.toLocaleString());
+      localStorage.setItem("login", date.toLocaleString());
 
-    navigate("/");
+      navigate("/");
+    } else {
+      Swal.fire("Login failed", "Try again", "error");
+      navigate("/login");
+    }
   };
 
   return (
@@ -30,19 +39,21 @@ export const Login = ({
 
         <h4 className="login__data--title">{STRINGS.loginUsername}</h4>
         <input
+          placeholder="user1"
           data-cy="user-input"
           required
           type="text"
-          defaultValue={user1.username}
+          onChange={(event) => setUsername(event.target.value)}
           className="login__data--input"
         />
 
         <h4 className="login__data--title">{STRINGS.loginPassword}</h4>
         <input
+          placeholder="123456"
           data-cy="password-input"
           required
           type="password"
-          defaultValue={user1.password}
+          onChange={(event) => setPassword(event.target.value)}
           className="login__data--input"
         />
 
