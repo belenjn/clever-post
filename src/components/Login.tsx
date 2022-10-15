@@ -30,6 +30,7 @@ export const Login = ({
 
         <h4 className="login__data--title">{STRINGS.loginUsername}</h4>
         <input
+          data-cy="user-input"
           required
           type="text"
           defaultValue={user1.username}
@@ -38,13 +39,18 @@ export const Login = ({
 
         <h4 className="login__data--title">{STRINGS.loginPassword}</h4>
         <input
+          data-cy="password-input"
           required
           type="password"
           defaultValue={user1.password}
           className="login__data--input"
         />
 
-        <button className="login__data--button" onClick={handleClick}>
+        <button
+          data-cy="click"
+          className="login__data--button"
+          onClick={handleClick}
+        >
           {STRINGS.loginButton}
         </button>
       </div>
