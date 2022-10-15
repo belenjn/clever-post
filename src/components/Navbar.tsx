@@ -26,6 +26,8 @@ export const Navbar = ({
           <div className="navbar__image" />
         </div>
         <div
+        data-cy="hamburger"
+
           className={
             isOpen === true ? "navbar__cross--hidden" : "navbar__hamburger"
           }

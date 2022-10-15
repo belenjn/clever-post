@@ -28,4 +28,14 @@ describe("/login", () => {
     cy.get("[data-cy=click]").click();
     cy.location().should((loc) => expect(loc.pathname).to.eq("/"));
   });
+
+  it("user logs out", () => {
+    cy.get("[data-cy=user-input]").type("user1");
+    cy.get("[data-cy=password-input]").type("123456");
+    cy.get("[data-cy=click]").click();
+    cy.location().should((loc) => expect(loc.pathname).to.eq("/"));
+    cy.get("[data-cy=hamburger]").click();
+    cy.get("[data-cy=logout]").click();
+    cy.location().should((loc) => expect(loc.pathname).to.eq("/login"));
+  });
 });

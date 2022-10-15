@@ -15,10 +15,16 @@ export const Sidebar = ({
   };
 
   return (
-    <div className="sidebar">
+    <div 
+    className="sidebar" 
+    >
       <div className="sidebar__userImage" />
       <h3 className="sidebar__userName">{STRINGS.sidebarUsername}</h3>
-      <button className="sidebar__logOutButton" onClick={handleClickLogOut}>
+      <button
+        data-cy="logout"
+        className="sidebar__logOutButton"
+        onClick={handleClickLogOut}
+      >
         {STRINGS.sidebarButton}
       </button>
     </div>
