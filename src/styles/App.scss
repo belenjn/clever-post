@@ -537,6 +537,20 @@ body {
       width: 300px;
       height: 60px;
     }
+
+    .modal__close {
+      display: flex;
+      background-image: url("../assets/close.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-left: 30px;
+      width: 30px;
+      height: 30px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
 

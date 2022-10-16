@@ -19,7 +19,7 @@ export const GridCard = ({ post }: { post: Post }) => {
   return (
     <>
       {openModal === true ? (
-        <Modal post={post} idPhoto={idPhoto} setOpenModal={setOpenModal} />
+        <Modal post={post}  idPhoto={idPhoto} setOpenModal={setOpenModal} />
       ) : (
         ""
       )}

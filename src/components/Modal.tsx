@@ -37,9 +37,14 @@ export const Modal = ({
     setDescriptionPost(e.currentTarget.value);
   };
 
+  const handleCloseModal = (): void => {
+    setOpenModal(false);
+  };
+
   return (
     <div className="modal__background">
       <div className="modal animate__animated animate__fadeIn animate__faster">
+        <div className="modal__close" onClick={handleCloseModal} />
         <img src={`https://i.pravatar.cc/150?u=${idPhoto}`} alt="User icon" />
         <h3>{post.title}</h3>
         <textarea
