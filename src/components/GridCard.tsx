@@ -19,7 +19,7 @@ export const GridCard = ({ post }: { post: Post }) => {
   return (
     <>
       {openModal === true ? (
-        <Modal post={post}  idPhoto={idPhoto} setOpenModal={setOpenModal} />
+        <Modal post={post} idPhoto={idPhoto} setOpenModal={setOpenModal} />
       ) : (
         ""
       )}
@@ -41,16 +41,22 @@ export const GridCard = ({ post }: { post: Post }) => {
             onClick={handleClickEdit}
           />
           <div
-          data-cy="delete-button"
+            data-cy="delete-button"
             className="grid__card--icons-container-delete"
-            onClick={(): {} => (
-              dispatch(deletePost(post)),
-              Swal.fire(
-                "Post deleted",
-                "Your changes have been saved successfully",
-                "success"
-              )
-            )}
+            onClick={(): {} =>
+              Swal.fire({
+                icon: "question",
+                title: "Do you want to delete this post?",
+                showCancelButton: true,
+                confirmButtonText: `Yes`,
+                denyButtonText: `No`,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  dispatch(deletePost(post)),
+                    Swal.fire("Deleted!", "", "success");
+                } 
+              })
+            }
           />
         </div>
       </div>
