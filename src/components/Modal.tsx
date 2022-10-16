@@ -43,13 +43,17 @@ export const Modal = ({
         <img src={`https://i.pravatar.cc/150?u=${idPhoto}`} alt="User icon" />
         <h3>{post.title}</h3>
         <textarea
+          data-cy="textarea"
           placeholder="Max 200 characters"
           maxLength={200}
           value={descriptionPost}
           onChange={(e) => handleChangeOfDescription(e)}
         />
 
-        <button onClick={() => handleClickSaveDescription(post.id)}>
+        <button
+          data-cy="save-button"
+          onClick={() => handleClickSaveDescription(post.id)}
+        >
           {STRINGS.modalButton}
         </button>
       </div>

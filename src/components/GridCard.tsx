@@ -36,10 +36,12 @@ export const GridCard = ({ post }: { post: Post }) => {
 
         <div className="grid__card--icons-container">
           <div
+            data-cy="edit-button"
             className="grid__card--icons-container-edit"
             onClick={handleClickEdit}
           />
           <div
+          data-cy="delete-button"
             className="grid__card--icons-container-delete"
             onClick={(): {} => (
               dispatch(deletePost(post)),
