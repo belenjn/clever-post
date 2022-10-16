@@ -1,5 +1,4 @@
 {
-  "homepage":"https://belenjn.github.io/clever-post",
   "name": "clever-post",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +9,8 @@
     "preview": "vite preview",
     "scss": "node-sass -watch scss -o css",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
