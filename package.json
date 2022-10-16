@@ -10,9 +10,7 @@
     "preview": "vite preview",
     "scss": "node-sass -watch scss -o css",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
