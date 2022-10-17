@@ -31,10 +31,10 @@ export const Login = ({
 
   return (
     <div className="login animate__animated animate__fadeIn animate__faster">
-      <h1 className="login__title">{STRINGS.loginTitle}</h1>
-      <h3 className="login__secondTitle">{STRINGS.loginSecondTitle}</h3>
+      <h1 className="login__title animate__animated animate__flipInX">{STRINGS.loginTitle}</h1>
+      <h3 className="login__secondTitle animate__animated animate__flipInX">{STRINGS.loginSecondTitle}</h3>
 
-      <div className="login__data--container">
+      <div className="login__data--container animate__animated animate__flipInX">
         <div className="login__data--logo" />
 
         <h4 className="login__data--title">{STRINGS.loginUsername}</h4>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@100;300;400;500;700&display=swap");
 html,
 * {
   -webkit-box-sizing: border-box;
@@ -45,9 +46,10 @@ body {
       align-self: center;
   color: #e51873;
   text-align: center;
+  font-family: 'Fredoka One', cursive !important;
   font-size: 35px;
   padding: 4px;
-  margin-top: 60px;
+  margin-top: 20px;
   height: 100px;
   overflow-y: hidden;
 }
@@ -59,7 +61,7 @@ body {
   text-align: center;
   font-weight: 100;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   overflow-y: hidden;
   height: 70px;
   width: 70%;
@@ -176,8 +178,9 @@ body {
 
 .navbar .navbar__icon--container h1 {
   color: white;
+  font-family: 'Fredoka One', cursive !important;
   font-weight: 100;
-  font-size: 30px;
+  font-size: 25px;
   margin-left: 20px;
 }
 
@@ -756,10 +759,15 @@ body {
   .login {
     height: 100vh;
   }
+  .login .login__title {
+    font-size: 45px;
+    margin-top: 60px;
+  }
   .login .login__data--container {
     width: 600px;
   }
   .login .login__data--container .login__data--logo {
+    margin-top: 20px;
     width: 80px;
     height: 80px;
   }
