@@ -33,7 +33,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #fde8f1;
+  background: #e51873;
+  background: -webkit-gradient(linear, left bottom, left top, from(#e51873), color-stop(6%, #ea408b), color-stop(88%, #fde8f1), to(white));
+  background: linear-gradient(0deg, #e51873 0%, #ea408b 6%, #fde8f1 88%, white 100%);
   height: 100vh;
 }
 

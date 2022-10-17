@@ -56,7 +56,8 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: map-get($colors, "secondary");
+  background: rgb(229,24,115);
+  background: linear-gradient(0deg, rgba(229,24,115,1) 0%, rgba(234,64,139,1) 6%, rgba(253,232,241,1) 88%, rgba(255,255,255,1) 100%); 
   height: 100vh;
 
   .login__title {
